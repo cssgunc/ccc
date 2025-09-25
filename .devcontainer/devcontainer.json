@@ -1,0 +1,41 @@
+{
+    "dockerComposeFile": "docker-compose.yml",
+    "workspaceFolder": "/workspace",
+    "service": "frontend",
+    "remoteUser": "vscode",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "dbaeumer.vscode-eslint",
+                "esbenp.prettier-vscode",
+                "ecmel.vscode-html-css",
+                "steoates.autoimport",
+                "christian-kohler.path-intellisense",
+                "ms-vscode.vscode-typescript-next",
+                "bradlc.vscode-tailwindcss",
+                "vscode-icons-team.vscode-icons",
+                "tamasfe.even-better-toml",
+                "gruntfuggly.todo-tree",
+                "dsznajder.es7-react-js-snippets",
+                "xabikos.javascriptsnippets",
+                "formulahendry.auto-rename-tag",
+                "formulahendry.auto-close-tag",
+                "wix.vscode-import-cost",
+                "usernamehw.errorlens",
+                "eamodio.gitlens",
+                "aaron-bond.better-comments"
+            ],
+            "settings": {
+                "editor.formatOnSave": true,
+                "editor.formatOnSaveMode": "file",
+                "editor.defaultFormatter": "esbenp.prettier-vscode",
+                "editor.codeActionsOnSave": {
+                    "source.fixAll": true,
+                    "source.fixAll.eslint": true
+                },
+                "editor.tabSize": 4,
+                "editor.spaceSize": 4
+            }
+        }
+    }
+}
