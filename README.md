@@ -1,55 +1,21 @@
-<p align="center">
-  <img src="./public/cssglogo.svg" alt="CSSG Logo" width="200">
-</p>
+# CCC
 
-# CSSG Starter Template
+A CS + SG project in partnership with The Campus &amp; Community Coalition
 
-This is a starter template for CSSG projects using React, TypeScript, and Tailwind CSS. It is configured to be used with VS Code Dev Containers for a consistent development environment.
+## About The Campus &amp; Community Coalition
 
-## Prerequisites
+The Campus & Community Coalition (CCC) is a collaborative force bringing together university and community partners to address the harms associated with high-risk drinking. By fostering open dialogue, sharing power, and using data-driven strategies, they work to create an environment where everyone can thrive socially, academically, and economically.
 
-Before you begin, ensure you have the following installed:
+## Project Mission
 
-- [Git](https://git-scm.com/)
-- [Docker Desktop](https://www.docker.com/products/docker-desktop)
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) for VS Code.
+CCC wants to migrate from under Downtown Chapel Hill's website to their own. Link to current website: [The Campus & Community Coalition](https://www.downtownchapelhill.com/coalition)
 
-## Getting Started
+## Project Overview
 
-1.  **Fork the repository:**
+This website will be used primarily to display important trends regarding alcohol use in the Chapel Hill community alongside other important resources.
 
-    Fork this repository. Then, clone your forked repository:
+This webpage uses React. If you are new to React, here is a resource to get started: [Get started with React](https://react.dev/learn)
 
-    ```bash
-    git clone <your-forked-repository-url>
-    cd <repository-name>
-    ```
+## Get Started
 
-2.  **Open in VS Code/Cursor:**
-
-    Open the cloned repository folder in VS Code or Cursor.
-
-3.  **Open in Dev Container:**
-
-    Once the project is open in VS Code, you will be prompted to "Reopen in Container". Click on it.
-
-    If you don't see the prompt, you can open the command palette and run "Dev Containers: Reopen in Container".
-    - **Windows/Linux:** `Ctrl+Shift+P`
-    - **Mac:** `Cmd+Shift+P`
-
-    This will build the Docker container for the development environment. The first build might take a few minutes. Subsequent loads will be much faster.
-
-## Available Commands
-
-Inside the dev container, you can use the following commands:
-
-| Command             | Description                                                |
-| :------------------ | :--------------------------------------------------------- |
-| `npm run dev`       | Starts the development server with Hot Module Replacement. |
-| `npm run build`     | Builds the application for production.                     |
-| `npm run start`     | Serves the production build.                               |
-| `npm run lint`      | Lints the codebase using ESLint.                           |
-| `npm run lint:fix`  | Lints and automatically fixes issues.                      |
-| `npm run format`    | Formats the code using Prettier.                           |
-| `npm run typecheck` | Runs the TypeScript compiler to check for type errors.     |
+Look at our environment setup docs: [Environment Setup](docs/environment_setup.md)
