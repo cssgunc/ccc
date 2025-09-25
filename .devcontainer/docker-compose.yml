@@ -5,6 +5,6 @@ services:
             dockerfile: .devcontainer/Dockerfile
         volumes:
             - ..:/workspace
-        command: /bin/sh -c "chown -R 1000:1000 /workspace && while sleep 1000; do :; done"
+        command: /bin/sh -c "while sleep 1000; do :; done"
         environment:
             - windir # Defined on Windows but not on other platforms

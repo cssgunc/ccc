@@ -3,6 +3,7 @@
     "workspaceFolder": "/workspace",
     "service": "frontend",
     "remoteUser": "vscode",
+    "postCreateCommand": "npm install",
     "customizations": {
         "vscode": {
             "extensions": [

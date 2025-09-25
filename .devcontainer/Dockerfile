@@ -53,6 +53,7 @@ RUN git config --system safe.directory '/workspace'
 
 # Configure zsh
 USER $USERNAME
+ENV HOME /home/$USERNAME
 
 # Add zsh theme with niceties
 RUN curl https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh | bash - \
