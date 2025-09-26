@@ -32,8 +32,9 @@
                     "source.fixAll": true,
                     "source.fixAll.eslint": true
                 },
-                "editor.tabSize": 4,
-                "editor.spaceSize": 4
+                "[typescriptreact]": {
+                    "editor.defaultFormatter": "esbenp.prettier-vscode"
+                }
             }
         }
     }
