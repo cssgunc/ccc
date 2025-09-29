@@ -35,7 +35,7 @@ Inside the dev container, you can use the following commands:
 
 ## Stopping the Project
 
-Close the running app with Ctrl + C.
+Close the running app with `Ctrl + C`.
 
 ## Conclusion
 
