@@ -8,7 +8,7 @@ We are using GitHub issues to represent tickets and their acceptance criteria (t
 
 Sometimes you may notice work to be done that does not have an issue on GitHub. If an issue does not exist for the thing you want to change, then create one detailing the changes to be made.
 
-When you are ready to take on a ticket, open the issue and go to "Assignees" and assign yourself to the ticket. 1 person per ticket only.
+When you are ready to take on a ticket, open the issue and go to "Assignees" and assign yourself to the ticket. 
 
 ## Branching - please read the entire section carefully
 
@@ -30,7 +30,7 @@ All commands must be run inside your project terminal. For all your tasks, you w
 
 **Option 1: Creating a branch on GitHub**
 
-1. Click the branch button on the github page of our repo. It should be right underneath the repo name and say "stage"
+1. Click the branch button on the github page of our repo. It should be right underneath the repo name and say "main"
 2. Type in the name of the branch you want to create.
 3. Click **Create Branch: [branch name]**
 4. Open up your project
@@ -56,30 +56,32 @@ A single branch should not last longer than 2 weeks and should have very self-co
 A proper commit should focus on one small piece of functionality and describe what has changed.\
 Only commit code that is working. Do not commit broken code.\
 Commits should start with an imperative verb and describe the overall change.\
-Example: "Fix calendar component not appearing on mobile"\
+Example: "Fix calendar component not appearing on home page"\
 For a resource on good commit messages, see here: [Guidelines for commit messages](https://gist.github.com/luismts/495d982e8c5b1a0ced4a57cf3d93cf60)\
-When you are ready to commit, make sure you're on your designated branch by the following code:\
+When you are ready to commit, make sure you're on your designated branch by the following code:
 `git status`\
 And then commit your changes:
 
 1. `git add *`
 2. `git commit -m "commit message"`
-3. `git push TODO FOR NOW`
+3. `git push`
 
 ### Keeping your branch up to date
 
-Occasionally, you may want to merge the contents of `stage` into your branch to keep it up to date. Follow these steps while remaining on your branch:
+Occasionally, you may want to merge the contents of `main` into your branch to keep it up to date. Follow these steps while remaining on your branch:
 
 1. `git fetch origin` to fetch the latest remote changes from origin for all branches
-2. `git merge origin/stage` to merge the remote stage branch into your own local branch
+2. `git merge origin` to merge the remote stage branch into your own local branch
+
+Or, you can run `git pull origin` to do both at once.
 
 ## Submitting Pull Requests
 
-Pull requests (PRs) represent a set of commits on a specific branch that are proposed to be merged into the `stage` branch.
+Pull requests (PRs) represent a set of commits on a specific branch that are proposed to be merged into the `main` branch.
 
 PRs have the following lifecycle:
 
-1. The PR is opened by the developer, who wants to merge their work from their branch into `stage`. The developer should request a review or let one of the project leads know.
+1. The PR is opened by the developer, who wants to merge their work from their branch into `main`. The developer should request a review or let one of the project leads know.
 2. The PR gets reviewed by a code reviewer such as a Tech Lead.
 3. If changes need to be made, the developer continues to work on that branch and re-requests another review when they are ready.
 4. If the changes are accepted, the branch commits will be merged into stage and the branch is now inactive.
@@ -89,7 +91,7 @@ Developers are expected to have successful PRs every 2 weeks - this means you sh
 ### Making a Pull Request
 
 1. Navigate to the [repository page](https://github.com/cssgunc/ccc).
-2. Click the **stage** branch button and navigate to the branch you worked on.
+2. Click the **main** branch button and navigate to the branch you worked on.
 3. Click the **Contribute** button
 4. Click **Open Pull Request**
 5. Write a short description of your changes
