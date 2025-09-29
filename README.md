@@ -8,13 +8,13 @@ The Campus & Community Coalition (CCC) is a collaborative force bringing togethe
 
 ## Project Mission
 
-CCC wants to migrate from under Downtown Chapel Hill's website to their own. Link to current website: [The Campus & Community Coalition](https://www.downtownchapelhill.com/coalition)
+CCC wants to migrate from under Downtown Chapel Hill's website to their own. [Click here to see the current website.](https://www.downtownchapelhill.com/coalition)
 
 ## Project Overview
 
 This website will be used primarily to display important trends regarding alcohol use in the Chapel Hill community alongside other important resources.
 
-This webpage uses React. If you are new to React, here is a resource to get started: [Get started with React](https://react.dev/learn)
+This webpage uses React. [Click here to get started with React.](https://react.dev/learn)
 
 ## Get Started
 
