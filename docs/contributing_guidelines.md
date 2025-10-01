@@ -68,7 +68,7 @@ And then commit your changes:
 
 ### Keeping your branch up to date
 
-Occasionally, you may want to merge the contents of `main` into your branch to keep it up to date. Follow these steps while remaining on your branch:
+Occasionally, you may want to merge the contents of `stage` into your branch to keep it up to date. Follow these steps while remaining on your branch:
 
 1. `git fetch origin` to fetch the latest remote changes from origin for all branches
 2. `git merge origin` to merge the remote stage branch into your own local branch
@@ -77,11 +77,11 @@ Or, you can run `git pull origin` to do both at once.
 
 ## Submitting Pull Requests
 
-Pull requests (PRs) represent a set of commits on a specific branch that are proposed to be merged into the `main` branch.
+Pull requests (PRs) represent a set of commits on a specific branch that are proposed to be merged into the `stage` branch.
 
 PRs have the following lifecycle:
 
-1. The PR is opened by the developer, who wants to merge their work from their branch into `main`. The developer should request a review or let one of the project leads know.
+1. The PR is opened by the developer, who wants to merge their work from their branch into `stage`. The developer should request a review or let one of the project leads know.
 2. The PR gets reviewed by a code reviewer such as a Tech Lead.
 3. If changes need to be made, the developer continues to work on that branch and re-requests another review when they are ready.
 4. If the changes are accepted, the branch commits will be merged into stage and the branch is now inactive.
