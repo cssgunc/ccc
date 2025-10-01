@@ -18,5 +18,5 @@ This webpage uses React. [Click here to get started with React.](https://react.d
 
 ## Get Started
 
-Look at our environment setup docs: [Environment Setup](docs/environment_setup.md)
+Look at our environment setup docs: [Environment Setup](docs/environment_setup.md)\
 Also, make sure to look over the: [Contributing Guidelines](docs/contributing_guidelines.md)
