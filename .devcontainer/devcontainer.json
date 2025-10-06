@@ -3,6 +3,7 @@
     "workspaceFolder": "/workspace",
     "service": "frontend",
     "remoteUser": "vscode",
+    "forwardPorts": [5173],
     "postCreateCommand": "npm install",
     "customizations": {
         "vscode": {
