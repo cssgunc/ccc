@@ -62,3 +62,5 @@ RUN curl https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.
 
 # Set Locale for Functional Autocompletion in zsh
 RUN sudo locale-gen en_US.UTF-8
+
+EXPOSE 5173
