@@ -1,7 +1,9 @@
 # Setting up your environment
 
 ## Prerequisites
-Before you begin, ensure you have the following installed: 
+
+Before you begin, ensure you have the following installed:
+
 - [Git](https://git-scm.com/)
 - [Visual Studio Code](https://code.visualstudio.com/)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
@@ -21,7 +23,8 @@ Before you begin, ensure you have the following installed:
 6. Run `npm run dev` to start the development server.
 
 ## Available Commands
-Inside the dev container, you can use the following commands: 
+
+Inside the dev container, you can use the following commands:
 | Command | Description |
 |---|---|
 | `npm run dev` | Starts the development server with Hot Module Replacement. |
@@ -31,7 +34,6 @@ Inside the dev container, you can use the following commands:
 | `npm run lint:fix` | Lints and automatically fixes issues. |
 | `npm run format` | Formats the code using Prettier. |
 | `npm run typecheck` | Runs the TypeScript compiler to check for type errors. |
-
 
 ## Stopping the Project
 

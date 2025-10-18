@@ -8,7 +8,7 @@ We are using GitHub issues to represent tickets and their acceptance criteria (t
 
 Sometimes you may notice work to be done that does not have an issue on GitHub. If an issue does not exist for the thing you want to change, then create one detailing the changes to be made.
 
-When you are ready to take on a ticket, open the issue and go to "Assignees" and assign yourself to the ticket. 
+When you are ready to take on a ticket, open the issue and go to "Assignees" and assign yourself to the ticket.
 
 ## Branching - please read the entire section carefully
 
