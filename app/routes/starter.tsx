@@ -14,7 +14,7 @@ export function meta() {
 export default function Home() {
     return (
         <>
-            <h1>Welcome to the Starter Template!</h1>
+            <h1>Campus & Community Coalition</h1>
         </>
     );
 }
