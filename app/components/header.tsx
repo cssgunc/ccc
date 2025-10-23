@@ -1,5 +1,5 @@
 import logo from "app/images/logo.png";
-import { useNavigate } from "react-router";
+import { Link } from "react-router";
 
 function Header() {
     const headerStyle = {
@@ -17,23 +17,6 @@ function Header() {
         padding: "10px 30px",
         fontSize: "20px",
     } as const;
-
-    const navigate = useNavigate();
-    const goHome = () => {
-        navigate("/");
-    };
-    const goPeople = () => {
-        navigate("/people");
-    };
-    const goResearch = () => {
-        navigate("/research");
-    };
-    const goData = () => {
-        navigate("/data");
-    };
-    const goNewsletter = () => {
-        navigate("/research");
-    };
     return (
         <div>
             <div style={headerStyle}>
@@ -44,18 +27,19 @@ function Header() {
                         gap: "10px",
                     }}
                 >
-                    <img
-                        src={logo}
-                        alt="Logo"
-                        style={{ height: "50px", width: "50px" }}
-                        onClick={goHome}
-                    />
+                    <Link to="/">
+                        <img
+                            src={logo}
+                            alt="Logo"
+                            style={{ height: "50px", width: "50px" }}
+                        />
+                    </Link>
                     <p>Campus & Communnity Coalition</p>
                 </div>
-                <p onClick={goPeople}>who we are</p>
-                <p onClick={goResearch}>research</p>
-                <p onClick={goData}>data</p>
-                <p onClick={goNewsletter}>our newsletter</p>
+                <Link to="/people">who we are</Link>
+                <Link to="/research">research</Link>
+                <Link to="/data">data</Link>
+                <Link to="/newsletter">our newsletter</Link>
             </div>
             <div style={{ paddingTop: "80px" }} />
         </div>
