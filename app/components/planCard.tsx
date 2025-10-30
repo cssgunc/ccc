@@ -14,7 +14,7 @@ export default function PlanCard({
     onClick,
 }: PlanCardProps) {
     return (
-        <div className="mx-auto p-8 rounded-2xl bg-gray-100 shadow-md">
+        <div className="mx-auto p-8 rounded-2xl bg-gray-100">
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                 <div className="flex-1 pr-0 sm:pr-6 mb-4 sm:mb-0">
                     <h2 className="text-2xl font-semibold mb-2 text-gray-800">
