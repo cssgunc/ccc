@@ -16,7 +16,7 @@ export default function Home() {
     return (
         <>
             <Header />
-            <h1>Campus & Community Coalition</h1>
+            <p>Campus & Community Coalition</p>
         </>
     );
 }

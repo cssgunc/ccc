@@ -4,7 +4,7 @@ export default function Research() {
     return (
         <>
             <Header />
-            <h1>Research Page</h1>
+            <p>Research Page</p>
         </>
     );
 }
