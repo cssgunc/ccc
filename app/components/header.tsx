@@ -15,17 +15,17 @@ function Header() {
         alignItems: "center",
         backgroundColor: "lightgray",
         borderRadius: "100px",
-        padding: "5px 25px",
+        padding: "0px 20px",
         fontSize: "20px",
         flexWrap: "wrap",
-        gap: "20px",
+        gap: "125px",
         zIndex: 1000,
     } as const;
     const linkStyle = {
         display: "flex",
-        justifyContent: "space-around",
+        justifyContent: "center",
         alignItems: "center",
-        gap: "30px",
+        gap: "80px",
         flex: "1",
         textAlign: "center",
     } as const;
@@ -48,13 +48,15 @@ function Header() {
                         src={logo}
                         alt="Logo"
                         style={{
-                            height: "60px",
+                            height: "100px",
                             width: "auto",
                             objectFit: "contain",
                         }}
                     />
                 </Link>
-                <p>Campus & Community Coalition</p>
+                <p style={{ fontWeight: "bold" }}>
+                    Campus & Community Coalition
+                </p>
             </div>
             <div style={linkStyle}>
                 <Link to="/people" style={textStyle}>
