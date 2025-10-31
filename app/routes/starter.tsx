@@ -1,4 +1,5 @@
 import React from "react";
+import Header from "~/components/header";
 
 export function meta() {
     return [
@@ -14,7 +15,8 @@ export function meta() {
 export default function Home() {
     return (
         <>
-            <h1>Campus & Community Coalition</h1>
+            <Header />
+            <p>Campus & Community Coalition</p>
         </>
     );
 }

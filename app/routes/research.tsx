@@ -5,6 +5,7 @@ import ReportCard from "~/components/reportsCard";
 export default function Research() {
     return (
         <main className="max-w-6xl mx-auto px-4 py-10">
+        
             <h1 className="text-3xl text-center font-bold mb-8">
                 Research Page
             </h1>
