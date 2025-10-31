@@ -17,7 +17,7 @@ function Header() {
         borderRadius: "100px",
         padding: "0px 20px",
         fontSize: "20px",
-        flexWrap: "wrap",
+        flexWrap: "nowrap",
         gap: "125px",
         zIndex: 1000,
     } as const;
@@ -32,7 +32,8 @@ function Header() {
 
     const textStyle = {
         textAlign: "center",
-        flexShrink: 0,
+        flexShrink: 5,
+        objectFit: "contain",
     } as const;
     return (
         <div style={headerStyle}>
@@ -48,15 +49,17 @@ function Header() {
                         src={logo}
                         alt="Logo"
                         style={{
-                            height: "100px",
+                            height: "90px",
                             width: "auto",
                             objectFit: "contain",
                         }}
                     />
                 </Link>
-                <p style={{ fontWeight: "bold" }}>
-                    Campus & Community Coalition
-                </p>
+                <Link to="/">
+                    <p style={{ fontWeight: "bold" }}>
+                        Campus & Community Coalition
+                    </p>
+                </Link>
             </div>
             <div style={linkStyle}>
                 <Link to="/people" style={textStyle}>
