@@ -1,26 +1,38 @@
+import { useEffect, useState } from "react";
 import logo from "app/images/logo.png";
 import { Link } from "react-router";
 
 function Header() {
+    const [shrink, setShrink] = useState(false);
+    useEffect(() => {
+        const handleScroll = () => {
+            setShrink(window.scrollY > 100);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
     const headerStyle = {
         position: "sticky",
-        top: "40px", // header spans 80% of the screen
+        top: shrink ? "0px" : "40px",
         margin: "0 auto",
         marginTop: "40px",
         marginBottom: "10px",
-        marginLeft: "40px",
-        marginRight: "40px",
+        marginLeft: shrink ? "0px" : "40px",
+        marginRight: shrink ? "0px" : "40px",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
         backgroundColor: "lightgray",
-        borderRadius: "100px",
-        padding: "0px 20px",
-        fontSize: "20px",
+        borderRadius: shrink ? "0px" : "100px",
+        padding: shrink ? "5px 20px" : "0px 20px",
+        fontSize: shrink ? "18px" : "20px",
         flexWrap: "nowrap",
         gap: "125px",
         zIndex: 1000,
+        transition: "all 0.4s ease",
     } as const;
+
     const linkStyle = {
         display: "flex",
         justifyContent: "center",
