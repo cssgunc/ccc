@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 export function meta() {
     return [
@@ -15,6 +16,11 @@ export default function Home() {
     return (
         <>
             <h1>Campus & Community Coalition</h1>
+            <p>
+                <Link to="/newsletter">
+                    Preview the newsletter sign-up form
+                </Link>
+            </p>
         </>
     );
 }
