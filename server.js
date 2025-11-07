@@ -1,12 +1,30 @@
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
+// import mailchimp from "@mailchimp/mailchimp_marketing";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const app = express();
 const port = 3000;
+
+// mailchimp.setConfig({
+//     apiKey: process.env.MAILCHIMP_API_KEY,
+//     server: process.env.MAILCHIMP_SERVER_PREFIX,
+// });
+
+// const run = async () => {
+//   const response = await mailchimp.audiences.createAudienceContact(
+//     {
+//         email_channel: "test@email.com"
+//     },
+//     process.env.MAILCHIMP_AUDIENCE_ID
+//   );
+//   console.log(response);
+// };
+
+// run();
 
 app.use(express.static(path.join(__dirname, "build")));
 
