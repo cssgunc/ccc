@@ -18,7 +18,7 @@ export default function Footer() {
         color: "white",
         fontSize: "0.95rem",
         lineHeight: "1.6",
-        marginTop: "40px", // ✅ moves the left section down for horizontal alignment
+        marginTop: "40px",
     } as const;
 
     const headingStyle = {
@@ -68,7 +68,6 @@ export default function Footer() {
 
     return (
         <footer style={footerStyle}>
-            {/* LEFT SIDE */}
             <div style={leftSection}>
                 <h2 style={headingStyle}>Stay Connected</h2>
                 <p>128 E. Franklin Street, Suite 240</p>
@@ -91,7 +90,6 @@ export default function Footer() {
                 </p>
             </div>
 
-            {/* RIGHT SIDE */}
             <div style={rightSection}>
                 <img src="app/images/logo.png" alt="Logo" style={logoStyle} />
 
