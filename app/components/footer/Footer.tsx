@@ -1,99 +1,121 @@
 import { Link } from "react-router";
-import "./Footer.css";
 
 export default function Footer() {
+    const footerStyle = {
+        width: "100%",
+        backgroundColor: "#A8A7A7",
+        padding: "60px 80px",
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "flex-start",
+        boxSizing: "border-box",
+    } as const;
+
+    const leftSection = {
+        display: "flex",
+        flexDirection: "column",
+        gap: "12px",
+        color: "white",
+        fontSize: "0.95rem",
+        lineHeight: "1.6",
+        marginTop: "40px", // ✅ moves the left section down for horizontal alignment
+    } as const;
+
+    const headingStyle = {
+        fontSize: "1.5rem",
+        fontWeight: "500",
+        marginBottom: "8px",
+    } as const;
+
+    const rightSection = {
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-end",
+        gap: "32px",
+    } as const;
+
+    const logoStyle = {
+        width: "140px",
+        height: "auto",
+        objectFit: "contain",
+    } as const;
+
+    const iconRowStyle = {
+        display: "flex",
+        gap: "20px",
+    } as const;
+
+    const circleStyle = {
+        width: "48px",
+        height: "48px",
+        borderRadius: "50%",
+        backgroundColor: "rgba(255,255,255,0.3)",
+    } as const;
+
+    const navStyle = {
+        display: "flex",
+        gap: "40px",
+        color: "white",
+        fontSize: "0.95rem",
+        textTransform: "lowercase",
+    } as const;
+
+    const linkStyle = {
+        color: "white",
+        textDecoration: "none",
+        opacity: 0.9,
+    } as const;
+
     return (
-        <footer className="footer">
-            <div className="footer-container">
-                <div className="footer-left">
-                    <Link to="/">
-                        <img
-                            src="/assets/logo.png"
-                            alt="Site Logo"
-                            className="footer-logo"
-                        />
+        <footer style={footerStyle}>
+            {/* LEFT SIDE */}
+            <div style={leftSection}>
+                <h2 style={headingStyle}>Stay Connected</h2>
+                <p>128 E. Franklin Street, Suite 240</p>
+                <p>Chapel Hill, NC 27514</p>
+                <p>
+                    <a
+                        href="mailto:samantha@downtownchapelhill.com"
+                        style={{ color: "white", textDecoration: "none" }}
+                    >
+                        samantha@downtownchapelhill.com
+                    </a>
+                </p>
+                <p>
+                    <a
+                        href="tel:9199285735"
+                        style={{ color: "white", textDecoration: "none" }}
+                    >
+                        (919) 928 - 5735
+                    </a>
+                </p>
+            </div>
+
+            {/* RIGHT SIDE */}
+            <div style={rightSection}>
+                <img src="app/images/logo.png" alt="Logo" style={logoStyle} />
+
+                <div style={iconRowStyle}>
+                    <div style={circleStyle}></div>
+                    <div style={circleStyle}></div>
+                    <div style={circleStyle}></div>
+                    <div style={circleStyle}></div>
+                </div>
+
+                <nav style={navStyle}>
+                    <Link to="/people" style={linkStyle}>
+                        who we are
                     </Link>
-                    <div className="contact-info">
-                        <p>128 E. Franklin Street, Suite 240</p>
-                        <p>Chapel Hill, NC 27514</p>
-                        <p>
-                            <a href="mailto:samantha@downtownchapelhill.com">
-                                samantha@downtownchapelhill.com
-                            </a>
-                        </p>
-                        <p>
-                            <a href="tel:9199285735">(919) 928 - 5735</a>
-                        </p>
-                    </div>
-                </div>
-
-                <nav className="footer-nav">
-                    <ul>
-                        <li>
-                            <Link to="/people">Who We Are</Link>
-                        </li>
-                        <li>
-                            <Link to="/research">Research</Link>
-                        </li>
-                        <li>
-                            <Link to="/data">Data</Link>
-                        </li>
-                        <li>
-                            <Link to="/newsletter">Our Newsletter</Link>
-                        </li>
-                    </ul>
+                    <Link to="/research" style={linkStyle}>
+                        research
+                    </Link>
+                    <Link to="/data" style={linkStyle}>
+                        data
+                    </Link>
+                    <Link to="/newsletter" style={linkStyle}>
+                        our newsletter
+                    </Link>
                 </nav>
-
-                <div className="footer-social">
-                    <a
-                        href="https://www.facebook.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Facebook"
-                    >
-                        <img
-                            src="./assets/facebook.png"
-                            alt="Facebook"
-                            className="social-icon"
-                        />
-                    </a>
-                    <a
-                        href="https://www.instagram.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="Instagram"
-                    >
-                        <img
-                            src="./assets/ig.png"
-                            alt="Instagram"
-                            className="social-icon"
-                        />
-                    </a>
-                    <a
-                        href="https://www.linkedin.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="LinkedIn"
-                    >
-                        <img
-                            src="./assets/linkedin.png"
-                            alt="LinkedIn"
-                            className="social-icon"
-                        />
-                    </a>
-                    <a
-                        href="https://twitter.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="X (Twitter)"
-                    >
-                        <img
-                            src="./assets/x.png"
-                            alt="Twitter"
-                            className="social-icon"
-                        />
-                    </a>
-                </div>
             </div>
         </footer>
     );
