@@ -20,7 +20,7 @@ export default function PlanCard({
                     <h2 className="text-2xl font-semibold mb-2 text-gray-800">
                         {title}
                     </h2>
-                    <p className="text-gray-600 max-w-lg">{summary}</p>
+                    <p className="text-gray-600 md:max-w-2xl lg:max-w-3xl xl:max-w-4xl">{summary}</p>
                 </div>
                 <div className="flex-shrink-0">
                     <button

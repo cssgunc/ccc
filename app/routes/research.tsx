@@ -3,11 +3,11 @@ import Header from "~/components/header";
 import PlanCard from "~/components/planCard";
 import ReportCard from "~/components/reportsCard";
 
-import planPdf from "app/images/CCC-Strategic-Plan-2024-27-1.pdf";
-import report1 from "app/images/Town-Gown-Full-Report_final.Report.1.pdf";
-import report2 from "app/images/Community-level-consequences-of-high-risk-drinking_final.Report.2.pdf";
-import report3 from "app/images/CCC-UNC-SWCCC-CoD-Final-Report.Report.3.pdf";
-import report4 from "app/images/CCC-The-Burden-of-Excessive-Drinking-in-Orange-County-NC-Final-Report.Report.4.pdf";
+import planPdf from "app/assets/CCC-Strategic-Plan-2024-27-1.pdf";
+import report1 from "app/assets/Town-Gown-Full-Report_final.Report.1.pdf";
+import report2 from "app/assets/Community-level-consequences-of-high-risk-drinking_final.Report.2.pdf";
+import report3 from "app/assets/CCC-UNC-SWCCC-CoD-Final-Report.Report.3.pdf";
+import report4 from "app/assets/CCC-The-Burden-of-Excessive-Drinking-in-Orange-County-NC-Final-Report.Report.4.pdf";
 
 export default function Research() {
     const openPDF = (url: string) => {
