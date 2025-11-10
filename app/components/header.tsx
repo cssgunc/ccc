@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import logo from "app/images/logo.png";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 
 const BREAKPOINT = 870;
 
