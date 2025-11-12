@@ -1,0 +1,19 @@
+.info-box {
+    height: 200px;
+    display: flex;
+    align-items: top;
+    justify-content: left;
+}
+.info-text {
+    padding: 8%;
+}
+
+h1 {
+    font-size: 20px;
+    margin: 0;
+}
+
+p {
+    font-size: 12px;
+    margin-top: 8px;
+}
