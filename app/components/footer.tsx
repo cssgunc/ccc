@@ -3,7 +3,7 @@ import { Link } from "react-router";
 export default function Footer() {
     const footerStyle = {
         width: "100%",
-        backgroundColor: "#A8A7A7",
+        backgroundColor: "lightgrey",
         padding: "60px 80px",
         display: "flex",
         justifyContent: "space-between",
@@ -15,7 +15,7 @@ export default function Footer() {
         display: "flex",
         flexDirection: "column",
         gap: "12px",
-        color: "white",
+        color: "black",
         fontSize: "0.95rem",
         lineHeight: "1.6",
         marginTop: "40px",
@@ -42,26 +42,38 @@ export default function Footer() {
 
     const iconRowStyle = {
         display: "flex",
+        flexDirection: "row",
         gap: "20px",
+        alignItems: "center",
     } as const;
 
     const circleStyle = {
         width: "48px",
         height: "48px",
         borderRadius: "50%",
-        backgroundColor: "rgba(255,255,255,0.3)",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        overflow: "hidden",
+    } as const;
+
+    const iconStyle = {
+        width: "100%",
+        height: "100%",
+        objectFit: "cover",
+        borderRadius: "50%",
     } as const;
 
     const navStyle = {
         display: "flex",
         gap: "40px",
-        color: "white",
+        color: "black",
         fontSize: "0.95rem",
         textTransform: "lowercase",
     } as const;
 
     const linkStyle = {
-        color: "white",
+        color: "black",
         textDecoration: "none",
         opacity: 0.9,
     } as const;
@@ -75,7 +87,7 @@ export default function Footer() {
                 <p>
                     <a
                         href="mailto:samantha@downtownchapelhill.com"
-                        style={{ color: "white", textDecoration: "none" }}
+                        style={{ color: "black", textDecoration: "none" }}
                     >
                         samantha@downtownchapelhill.com
                     </a>
@@ -83,7 +95,7 @@ export default function Footer() {
                 <p>
                     <a
                         href="tel:9199285735"
-                        style={{ color: "white", textDecoration: "none" }}
+                        style={{ color: "black", textDecoration: "none" }}
                     >
                         (919) 928 - 5735
                     </a>
@@ -91,13 +103,42 @@ export default function Footer() {
             </div>
 
             <div style={rightSection}>
-                <img src="app/assets/logo.png" alt="Logo" style={logoStyle} />
+                <Link to="/">
+                    <img
+                        src="app/assets/logo.png"
+                        alt="Logo"
+                        style={logoStyle}
+                    />
+                </Link>
 
                 <div style={iconRowStyle}>
-                    <div style={circleStyle}></div>
-                    <div style={circleStyle}></div>
-                    <div style={circleStyle}></div>
-                    <div style={circleStyle}></div>
+                    <div style={circleStyle}>
+                        <a
+                            href="https://www.instagram.com/chapelhillcoalition/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="app/assets/instagram-logo.png"
+                                alt="Instagram"
+                                style={iconStyle}
+                            />
+                        </a>
+                    </div>
+
+                    <div style={circleStyle}>
+                        <a
+                            href="https://www.facebook.com/ChapelHillCCC"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <img
+                                src="app/assets/facebook-logo.png"
+                                alt="Facebook"
+                                style={iconStyle}
+                            />
+                        </a>
+                    </div>
                 </div>
 
                 <nav style={navStyle}>
