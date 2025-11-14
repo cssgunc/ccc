@@ -200,7 +200,7 @@ function Header() {
                 </div>
                 <Link to="/" style={menuLinkStyle} onClick={toggleMenu}>
                     Home
-                </Link> 
+                </Link>
                 <Link to="/people" style={menuLinkStyle} onClick={toggleMenu}>
                     Who We Are
                 </Link>
