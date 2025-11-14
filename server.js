@@ -24,8 +24,6 @@ const port = 3000;
 //   console.log(response);
 // };
 
-// run();
-
 app.use(express.static(path.join(__dirname, "build")));
 
 app.get("/", (req, res) => {
