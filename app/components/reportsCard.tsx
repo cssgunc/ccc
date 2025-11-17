@@ -14,19 +14,25 @@ export default function ReportCard({
     onClick,
 }: ReportCardProps) {
     return (
-        <article className="rounded-2xl bg-gray-100 p-6 flex flex-col justify-between h-full">
+        <article
+            className={
+                "rounded-2xl bg-[#6A9F26] p-6 flex flex-col justify-between h-full"
+            }
+        >
             <div>
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                <h3 className={"text-lg font-semibold text-white mb-2"}>
                     {title}
                 </h3>
-                <p className="text-gray-600">{summary}</p>
+                <p className={"text-white"}>{summary}</p>
             </div>
 
             <div className="flex justify-end mt-6">
                 <button
                     type="button"
                     onClick={onClick}
-                    className="inline-flex items-center px-5 py-2 bg-gray-600 text-white text-sm font-medium rounded-full hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500"
+                    className={`inline-flex items-center px-5 py-2 text-white text-sm font-medium rounded-full 
+                    bg-[#6A9F26] border-2 border-white 
+                    hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-[#6A9F26]`}
                     aria-label={buttonText}
                 >
                     <span className="mr-2">{buttonText}</span>
