@@ -1,7 +1,10 @@
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
-// import mailchimp from "@mailchimp/mailchimp_marketing";
+import client from "@mailchimp/mailchimp_marketing";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -9,20 +12,39 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const port = 3000;
 
-// mailchimp.setConfig({
-//     apiKey: process.env.MAILCHIMP_API_KEY,
-//     server: process.env.MAILCHIMP_SERVER_PREFIX,
-// });
+app.use(express.json());
 
-// const run = async () => {
-//   const response = await mailchimp.audiences.createAudienceContact(
-//     {
-//         email_channel: "test@email.com"
-//     },
-//     process.env.MAILCHIMP_AUDIENCE_ID
-//   );
-//   console.log(response);
-// };
+client.setConfig({
+    apiKey: process.env.MAILCHIMP_API_KEY,
+    server: process.env.MAILCHIMP_SERVER_PREFIX,
+});
+
+app.post("/api/add-contact", async (req, res) => {
+    try {
+        const { email, firstName, lastName } = req.body;
+
+        const response = await client.lists.addListMember(
+            process.env.MAILCHIMP_AUDIENCE_ID,
+            {
+                email_address: email,
+                status: "subscribed",
+                merge_fields: {
+                    FNAME: firstName || "",
+                    LNAME: lastName || "",
+                },
+            }
+        );
+
+        res.status(200).json({ success: true, data: response });
+    } catch (error) {
+        console.error("Mailchimp Error:", error);
+
+        res.status(500).json({
+            success: false,
+            error: error.response?.body || error.message,
+        });
+    }
+});
 
 app.use(express.static(path.join(__dirname, "build")));
 
