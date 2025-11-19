@@ -166,7 +166,7 @@ function Header() {
                         Who We Are
                     </Link>
                     <Link to="/research" style={textStyle}>
-                        Research
+                        Resources
                     </Link>
                     <Link to="/data" style={textStyle}>
                         Data
@@ -205,7 +205,7 @@ function Header() {
                     Who We Are
                 </Link>
                 <Link to="/research" style={menuLinkStyle} onClick={toggleMenu}>
-                    Research
+                    Resources
                 </Link>
                 <Link to="/data" style={menuLinkStyle} onClick={toggleMenu}>
                     Data
