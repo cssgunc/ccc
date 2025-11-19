@@ -330,12 +330,13 @@ export default function Data() {
                         comprehensive{" "}
                         <span style={{ color: "#499ED7" }}>Scorecard!</span>
                         <br />
-                        Details on all our studies are located on this page.
+                        All of our data is in available in our scorecard via the
+                        button below.{" "}
                     </p>
                     <div className="flex justify-center">
                         <Button
                             asChild
-                            className="w-1/2 rounded-full py-7 text-white text-xl font-medium inline-flex items-center justify-center"
+                            className="w-1/3 rounded-full py-7 text-white text-xl font-medium inline-flex items-center justify-center"
                             style={{
                                 backgroundColor: "#499ED7",
                                 borderColor: "#499ED7",
