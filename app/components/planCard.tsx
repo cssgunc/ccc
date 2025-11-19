@@ -7,11 +7,12 @@ interface PlanCardProps {
     onClick?: () => void;
 }
 
+const BLUE_COLOR = "text-[#499ED7]";
+const BORDER_COLOR = "border-[#499ED7]";
+
 export default function PlanCard({
     title = "Placeholder Plan Title",
     summary = "Placeholder description for the plan card component.",
-    buttonText = "View Plan",
-    onClick,
 }: PlanCardProps) {
     return (
         <div className="mx-auto p-8 rounded-2xl bg-gray-100">
