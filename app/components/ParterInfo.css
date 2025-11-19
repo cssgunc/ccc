@@ -1,21 +1,25 @@
-.info-box {
-    height: 200px;
+.container {
     background-color: white;
-    border-radius: 20px;
-    display: flex;
-    align-items: top;
-    justify-content: left;
-}
-.info-text {
-    padding: 8%;
+    border-radius: 8px;
+    height: 148px;
+    width: 320px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0);
 }
 
-h1 {
+.director-name {
     font-size: 20px;
-    margin: 0;
+    font-weight: bold;
+    color: black;
 }
 
-p {
-    font-size: 12px;
-    margin-top: 8px;
+.director-bio {
+    font-size: 16px;
+    color: #555555;
+}
+
+.director-role {
+    font-size: 16px;
+    color: #555555;
+    margin-top: 25px;
 }

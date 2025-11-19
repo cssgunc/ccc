@@ -40,3 +40,52 @@
 .director-info {
     font-size: 16px;
 }
+
+.divider {
+    height: 2px;
+    background-color: #7bafd4;
+    width: 1093px;
+    margin-bottom: 30px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.coalition-partners-containers {
+    max-width: 1093px;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.student-affairs-list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.student-affairs-list li {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+.item-size {
+    font-size: 20px;
+    margin-bottom: 33px;
+}
+
+.board-of-directors-container {
+    background-color: #e6e6e6;
+    width: 1093px;
+    padding: 32px;
+    border-radius: 8px;
+}
+
+.directors-grid {
+    display: flex;
+    flex-wrap: wrap; /* This allows items to drop to the next line */
+    gap: 20px; /* Space between cards */
+    justify-content: center; /* Centers the 2 items on the bottom row */
+}
