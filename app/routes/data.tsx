@@ -2,7 +2,14 @@
 
 import React from "react";
 import Header from "~/components/header";
-import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
+import {
+    Area,
+    CartesianGrid,
+    XAxis,
+    YAxis,
+    Line,
+    ComposedChart,
+} from "recharts";
 import { Button } from "~/components/data-ui/button";
 import {
     Card,
@@ -152,7 +159,7 @@ export function Chart({
                 </div>
                 <Select value={timeRange} onValueChange={setTimeRange}>
                     <SelectTrigger
-                        className="hidden w-[160px] rounded-lg sm:ml-auto sm:flex"
+                        className="hidden w-[40] rounded-lg sm:ml-auto sm:flex"
                         aria-label="Select a value"
                     >
                         <SelectValue placeholder="All years" />
@@ -182,7 +189,7 @@ export function Chart({
                         config={chartContainerConfig}
                         className="aspect-auto h-[250px] w-full"
                     >
-                        <AreaChart data={filteredData}>
+                        <ComposedChart data={filteredData}>
                             <defs>
                                 <>
                                     <linearGradient
@@ -243,6 +250,24 @@ export function Chart({
                                 tickFormatter={(value) => String(value)}
                                 interval="preserveStartEnd"
                             />
+                            <YAxis
+                                tickLine={false}
+                                axisLine={false}
+                                tickFormatter={(value) =>
+                                    which === "binge"
+                                        ? `${value}%`
+                                        : String(value)
+                                }
+                                label={{
+                                    value:
+                                        which === "binge"
+                                            ? "Percentage"
+                                            : "Number of Parties",
+                                    angle: -90,
+                                    position: "insideLeft",
+                                    style: { textAnchor: "middle" },
+                                }}
+                            />
                             <ChartTooltip
                                 cursor={false}
                                 content={
@@ -262,16 +287,18 @@ export function Chart({
                                 stroke={activeConfig.series.desktop.color}
                                 connectNulls
                             />
-                            <Area
+                            <Line
                                 dataKey="mobile"
                                 name="Target"
                                 type="monotone"
-                                fill={`url(#${mobileGradientId})`}
                                 stroke={activeConfig.series.mobile.color}
+                                strokeWidth={2}
+                                strokeDasharray="5 5"
+                                dot={false}
                                 connectNulls
                             />
                             <ChartLegend content={<ChartLegendContent />} />
-                        </AreaChart>
+                        </ComposedChart>
                     </ChartContainer>
                 )}
             </CardContent>
@@ -290,12 +317,14 @@ export default function Data() {
     return (
         <main>
             <Header />
-            <section className="mx-auto max-w-6xl px-4 py-10">
-                <header className="mb-8 text-center">
-                    <h1 className="text-5xl tracking-tight">Data</h1>
-                </header>
-
-                <section className="mb-8 rounded-2xl bg-[#E8E8E8] p-10 max-w-4xl mx-auto text-center">
+            <header
+                className="mt-16 mb-8 text-center"
+                style={{ backgroundColor: "#499ED7BF", padding: "2rem 0" }}
+            >
+                <h1 className="text-5xl tracking-tight">Data</h1>
+            </header>
+            <section className="mx-auto max-w-6xl px-4 pb-16">
+                <section className="mb-8 p-8 max-w-4xl mx-auto text-center">
                     <p className="text-lg leading-relaxed mb-8">
                         These data visualizations originate from our
                         comprehensive{" "}
@@ -317,7 +346,7 @@ export default function Data() {
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                <span className="mr-2">Score Card</span>
+                                <span>Score Card</span>
                                 <svg
                                     className="w-5 h-5"
                                     fill="none"
@@ -345,6 +374,9 @@ export default function Data() {
                             <p className="text-sm">
                                 {chartConfigs.binge.blurb}
                             </p>
+                            <p className="text-xs text-muted-foreground mt-2">
+                                NCHA Survey from Student Wellness
+                            </p>
                         </div>
                     </div>
                     <div>
@@ -352,6 +384,9 @@ export default function Data() {
                         <div className="mt-4">
                             <p className="text-sm">
                                 {chartConfigs.party.blurb}
+                            </p>
+                            <p className="text-xs text-muted-foreground mt-2">
+                                UNC-CH Off-Campus Student Life
                             </p>
                         </div>
                     </div>
