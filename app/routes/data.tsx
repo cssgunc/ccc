@@ -150,7 +150,7 @@ export function Chart({
 
     const card = (
         <Card className="bg-[#D9D9D9] shadow-none">
-            <CardHeader className="flex items-center gap-2 space-y-0 border-b py-5 sm:flex-row">
+            <CardHeader className="flex items-center gap-2 space-y-0 border-b border-gray-400 py-5 sm:flex-row">
                 <div className="grid flex-1 gap-1">
                     <CardTitle className="text-xl font-normal">
                         {activeConfig.title}
@@ -159,10 +159,13 @@ export function Chart({
                 </div>
                 <Select value={timeRange} onValueChange={setTimeRange}>
                     <SelectTrigger
-                        className="hidden w-[40] rounded-lg sm:ml-auto sm:flex"
+                        className="hidden w-[40] rounded-lg sm:ml-auto sm:flex border-gray-400"
                         aria-label="Select a value"
                     >
-                        <SelectValue placeholder="All years" />
+                        <SelectValue
+                            placeholder="All years"
+                            className="border-gray-400"
+                        />
                     </SelectTrigger>
                     <SelectContent className="rounded-xl">
                         <SelectItem value="all" className="rounded-lg">
@@ -240,7 +243,11 @@ export function Chart({
                                     </linearGradient>
                                 </>
                             </defs>
-                            <CartesianGrid vertical={false} />
+                            <CartesianGrid
+                                vertical={false}
+                                stroke="#9CA3AF"
+                                strokeDasharray="3 3"
+                            />
                             <XAxis
                                 dataKey="date"
                                 tickLine={false}
@@ -330,8 +337,7 @@ export default function Data() {
                 <section className="mb-8 p-8 max-w-4xl mx-auto text-center">
                     <p className="text-lg leading-relaxed mb-8">
                         These data visualizations originate from our
-                        comprehensive{" "}
-                        <span style={{ color: "#499ED7" }}>Scorecard!</span>
+                        comprehensive <strong>Scorecard!</strong>
                         <br />
                         All of our data is in available in our scorecard via the
                         button below.{" "}
@@ -350,7 +356,7 @@ export default function Data() {
                                 target="_blank"
                                 rel="noreferrer"
                             >
-                                <span>Score Card</span>
+                                <span>Scorecard</span>
                                 <svg
                                     className="w-5 h-5"
                                     fill="none"
@@ -371,14 +377,14 @@ export default function Data() {
                     </div>
                 </section>
 
-                <section className="flex flex-col gap-8">
+                <section className="flex flex-col gap-16">
                     <div>
                         <Chart which="binge" embed />
                         <div className="mt-4">
-                            <p className="text-sm">
+                            <p className="text-md">
                                 {chartConfigs.binge.blurb}
                             </p>
-                            <p className="text-xs text-muted-foreground mt-2">
+                            <p className="text-sm text-muted-foreground mt-2">
                                 NCHA Survey from Student Wellness
                             </p>
                         </div>
@@ -386,10 +392,10 @@ export default function Data() {
                     <div>
                         <Chart which="party" embed />
                         <div className="mt-4">
-                            <p className="text-sm">
+                            <p className="text-md">
                                 {chartConfigs.party.blurb}
                             </p>
-                            <p className="text-xs text-muted-foreground mt-2">
+                            <p className="text-sm text-muted-foreground mt-2">
                                 UNC-CH Off-Campus Student Life
                             </p>
                         </div>
