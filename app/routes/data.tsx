@@ -253,6 +253,9 @@ export function Chart({
                             <YAxis
                                 tickLine={false}
                                 axisLine={false}
+                                domain={
+                                    which === "binge" ? [0, 100] : undefined
+                                }
                                 tickFormatter={(value) =>
                                     which === "binge"
                                         ? `${value}%`
