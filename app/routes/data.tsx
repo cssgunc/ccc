@@ -56,7 +56,7 @@ const chartConfigs = {
         blurb: "Proportion of university students who drank five or more drinks at a sitting at least once in the past two weeks.",
         series: {
             desktop: { label: "Actual", color: "hsl(86, 61%, 39%)" },
-            mobile: { label: "Target", color: "hsl(215, 20%, 65%)" },
+            mobile: { label: "Target", color: "hsl(215, 70%, 40%)" },
         },
     },
     party: {
@@ -64,8 +64,8 @@ const chartConfigs = {
         subtitle: "Actual vs Target",
         blurb: "Number of parties registered in the party registration system in the past 12 months.",
         series: {
-            desktop: { label: "Actual", color: "hsl(204, 64%, 56%)" },
-            mobile: { label: "Target", color: "hsl(215, 20%, 65%)" },
+            desktop: { label: "Actual", color: "hsl(86, 61%, 39%)" },
+            mobile: { label: "Target", color: "hsl(215, 70%, 40%)" },
         },
     },
 } as const satisfies Record<
