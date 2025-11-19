@@ -1,30 +1,31 @@
 "use client";
 
 import React from "react";
+import Header from "~/components/header";
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
-import { Button } from "~/components/ui/button";
+import { Button } from "~/components/data-ui/button";
 import {
     Card,
     CardContent,
     CardDescription,
     CardHeader,
     CardTitle,
-} from "~/components/ui/card";
-import type { ChartConfig } from "~/components/ui/chart";
+} from "~/components/data-ui/card";
+import type { ChartConfig } from "~/components/data-ui/chart";
 import {
     ChartContainer,
     ChartLegend,
     ChartLegendContent,
     ChartTooltip,
     ChartTooltipContent,
-} from "~/components/ui/chart";
+} from "~/components/data-ui/chart";
 import {
     Select,
     SelectContent,
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "~/components/ui/select";
+} from "~/components/data-ui/select";
 
 type CiPoint = {
     timePeriod: string;
@@ -43,23 +44,21 @@ type SeriesConfig = {
 
 const chartConfigs = {
     binge: {
-        title: "Binge Drinking in the Past Two Weeks",
+        title: "Population Indicator - Binge Drinking in the Past Two Weeks",
         subtitle: "Actual vs Target",
         blurb: "Proportion of university students who drank five or more drinks at a sitting at least once in the past two weeks.",
         series: {
-            // shadcn blue shades
-            desktop: { label: "Actual", color: "oklch(0.809 0.105 251.813)" },
-            mobile: { label: "Target", color: "oklch(0.623 0.214 259.815)" },
+            desktop: { label: "Actual", color: "hsl(86, 61%, 39%)" },
+            mobile: { label: "Target", color: "hsl(215, 20%, 65%)" },
         },
     },
     party: {
-        title: "Party Registration",
+        title: "Population Indicator - Party Registration",
         subtitle: "Actual vs Target",
         blurb: "Number of parties registered in the party registration system in the past 12 months.",
         series: {
-            // shadcn red shades
-            desktop: { label: "Actual", color: "oklch(0.808 0.114 19.571)" },
-            mobile: { label: "Target", color: "oklch(0.637 0.237 25.331)" },
+            desktop: { label: "Actual", color: "hsl(204, 64%, 56%)" },
+            mobile: { label: "Target", color: "hsl(215, 20%, 65%)" },
         },
     },
 } as const satisfies Record<
@@ -143,10 +142,12 @@ export function Chart({
     }, [chartData, timeRange]);
 
     const card = (
-        <Card className="bg-muted/20 shadow-none">
+        <Card className="bg-[#D9D9D9] shadow-none">
             <CardHeader className="flex items-center gap-2 space-y-0 border-b py-5 sm:flex-row">
                 <div className="grid flex-1 gap-1">
-                    <CardTitle>{activeConfig.title}</CardTitle>
+                    <CardTitle className="text-xl font-normal">
+                        {activeConfig.title}
+                    </CardTitle>
                     <CardDescription>{activeConfig.subtitle}</CardDescription>
                 </div>
                 <Select value={timeRange} onValueChange={setTimeRange}>
@@ -273,9 +274,6 @@ export function Chart({
                         </AreaChart>
                     </ChartContainer>
                 )}
-                <p className="mt-4 text-xs text-muted-foreground">
-                    {activeConfig.blurb}
-                </p>
             </CardContent>
         </Card>
     );
@@ -290,40 +288,74 @@ export function Chart({
 
 export default function Data() {
     return (
-        <main className="mx-auto max-w-6xl px-4 py-10">
-            <header className="mb-8 text-center">
-                <h1 className="text-2xl font-semibold tracking-tight">
-                    Key Data
-                </h1>
-                <p className="text-sm text-muted-foreground">
-                    Explore trends in student drinking and partying across
-                    recent years.
-                </p>
-            </header>
+        <main>
+            <Header />
+            <section className="mx-auto max-w-6xl px-4 py-10">
+                <header className="mb-8 text-center">
+                    <h1 className="text-5xl tracking-tight">Data</h1>
+                </header>
 
-            <section className="grid grid-cols-1 gap-6 md:grid-cols-2">
-                <Chart which="binge" embed />
-                <Chart which="party" embed />
-            </section>
-
-            <section className="mt-10 rounded-2xl border bg-muted/30 p-6">
-                <p className="text-sm leading-relaxed">
-                    The Chapel Hill Campus & Community Coalition to Reduce the
-                    Negative Impacts of High-Risk Drinking Behaviors (CCC)
-                    strives to provide and use the most up-to-date data
-                    available to drive its goals and objectives.
-                </p>
-                <div className="mt-4 flex justify-center">
-                    <Button asChild variant="outline" className="rounded-full">
-                        <a
-                            href="https://embed.clearimpact.com/Scorecard/Embed/82237"
-                            target="_blank"
-                            rel="noreferrer"
+                <section className="mb-8 rounded-2xl bg-[#E8E8E8] p-10 max-w-4xl mx-auto text-center">
+                    <p className="text-lg leading-relaxed mb-8">
+                        These data visualizations originate from our
+                        comprehensive{" "}
+                        <span style={{ color: "#499ED7" }}>Scorecard!</span>
+                        <br />
+                        Details on all our studies are located on this page.
+                    </p>
+                    <div className="flex justify-center">
+                        <Button
+                            asChild
+                            className="w-1/2 rounded-full py-7 text-white text-xl font-medium inline-flex items-center justify-center"
+                            style={{
+                                backgroundColor: "#499ED7",
+                                borderColor: "#499ED7",
+                            }}
                         >
-                            View Scorecard
-                        </a>
-                    </Button>
-                </div>
+                            <a
+                                href="https://embed.clearimpact.com/Scorecard/Embed/82237"
+                                target="_blank"
+                                rel="noreferrer"
+                            >
+                                <span className="mr-2">Score Card</span>
+                                <svg
+                                    className="w-5 h-5"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M9 5l7 7-7 7"
+                                    ></path>
+                                </svg>
+                            </a>
+                        </Button>
+                    </div>
+                </section>
+
+                <section className="flex flex-col gap-8">
+                    <div>
+                        <Chart which="binge" embed />
+                        <div className="mt-4">
+                            <p className="text-sm">
+                                {chartConfigs.binge.blurb}
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <Chart which="party" embed />
+                        <div className="mt-4">
+                            <p className="text-sm">
+                                {chartConfigs.party.blurb}
+                            </p>
+                        </div>
+                    </div>
+                </section>
             </section>
         </main>
     );
