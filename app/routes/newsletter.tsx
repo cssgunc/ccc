@@ -15,20 +15,13 @@ const INITIAL_FORM = {
 export default function Newsletter() {
     const [formValues, setFormValues] =
         React.useState<typeof INITIAL_FORM>(INITIAL_FORM);
+    const [message, setMessage] = React.useState<string | null>(null);
+    const [isSubmitted, setIsSubmitted] = React.useState(false);
     const [hasInteracted, setHasInteracted] = React.useState(false);
-    const [successMessage, setSuccessMessage] = React.useState<string | null>(
-        null
-    );
 
-    const fieldsComplete = React.useMemo(
-        () => areRequiredFilled(formValues),
-        [formValues]
-    );
-
-    const emailValid = React.useMemo(
-        () => isEmailValid(formValues.email),
-        [formValues.email]
-    );
+    const fieldsComplete = areRequiredFilled(formValues);
+    const emailValid = isEmailValid(formValues.email);
+    const isSubmitDisabled = !fieldsComplete || !emailValid || isSubmitted;
 
     const validationError = !fieldsComplete
         ? "All required fields are not filled."
@@ -36,23 +29,24 @@ export default function Newsletter() {
           ? "Invalid email format."
           : null;
 
-    const shouldShowError = hasInteracted && Boolean(validationError);
-    const isSubmitDisabled = !fieldsComplete || !emailValid;
+    const shouldShowError =
+        hasInteracted && !message && Boolean(validationError);
 
     const handleChange =
         (field: keyof typeof INITIAL_FORM) =>
         (event: React.ChangeEvent<HTMLInputElement>) => {
-            const { value } = event.target;
-
+            if (isSubmitted) return;
             setHasInteracted(true);
-            setSuccessMessage(null);
+
             setFormValues((prev) => ({
                 ...prev,
-                [field]: value,
+                [field]: event.target.value,
             }));
         };
 
     const handleBlur = (field: keyof typeof INITIAL_FORM) => () => {
+        if (isSubmitted) return;
+
         setFormValues((prev) => ({
             ...prev,
             [field]:
@@ -62,20 +56,8 @@ export default function Newsletter() {
         }));
     };
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        setHasInteracted(true);
-
-        if (validationError) {
-            setSuccessMessage(null);
-            setFormValues((prev) => ({
-                ...prev,
-                email: normalizeEmail(prev.email),
-                firstName: prev.firstName.trim(),
-                lastName: prev.lastName.trim(),
-            }));
-            return;
-        }
 
         const normalizedForm = {
             firstName: formValues.firstName.trim(),
@@ -83,8 +65,24 @@ export default function Newsletter() {
             email: normalizeEmail(formValues.email),
         };
 
-        setFormValues(normalizedForm);
-        setSuccessMessage("Thanks for signing up!");
+        try {
+            const res = await fetch("/api/add-contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(normalizedForm),
+            });
+
+            const data = await res.json();
+
+            if (data.success) {
+                setMessage("Thanks for signing up!");
+                setIsSubmitted(true);
+            } else {
+                setMessage("Error signing up. Please try again.");
+            }
+        } catch {
+            setMessage("Server error. Please try again.");
+        }
     };
 
     return (
@@ -97,7 +95,7 @@ export default function Newsletter() {
                     </h1>
                     <p className="mt-3 text-center text-base text-[#333333]">
                         Receive updates, events, and more! Our newsletters are
-                        sent out quarterly
+                        sent out quarterly.
                     </p>
 
                     <form
@@ -106,82 +104,64 @@ export default function Newsletter() {
                         noValidate
                     >
                         <div className="space-y-2">
-                            <label
-                                className="block text-sm font-medium text-[#2e2e2e]"
-                                htmlFor="newsletter-first-name"
-                            >
+                            <label className="block text-sm font-medium text-[#2e2e2e]">
                                 First Name
                             </label>
                             <input
-                                id="newsletter-first-name"
-                                name="firstName"
                                 type="text"
-                                autoComplete="given-name"
                                 value={formValues.firstName}
                                 onChange={handleChange("firstName")}
                                 onBlur={handleBlur("firstName")}
-                                required
-                                className="h-14 w-full rounded-full border border-transparent bg-white px-6 text-base text-black outline-none transition focus:border-[#b0b0b0] focus:shadow-[0_0_0_3px_rgba(0,0,0,0.08)]"
+                                disabled={isSubmitted}
+                                className="h-14 w-full rounded-full border border-transparent bg-white px-6 text-base text-black outline-none transition disabled:opacity-60 disabled:cursor-not-allowed"
                             />
                         </div>
 
                         <div className="space-y-2">
-                            <label
-                                className="block text-sm font-medium text-[#2e2e2e]"
-                                htmlFor="newsletter-last-name"
-                            >
+                            <label className="block text-sm font-medium text-[#2e2e2e]">
                                 Last Name
                             </label>
                             <input
-                                id="newsletter-last-name"
-                                name="lastName"
                                 type="text"
-                                autoComplete="family-name"
                                 value={formValues.lastName}
                                 onChange={handleChange("lastName")}
                                 onBlur={handleBlur("lastName")}
-                                required
-                                className="h-14 w-full rounded-full border border-transparent bg-white px-6 text-base text-black outline-none transition focus:border-[#b0b0b0] focus:shadow-[0_0_0_3px_rgba(0,0,0,0.08)]"
+                                disabled={isSubmitted}
+                                className="h-14 w-full rounded-full border border-transparent bg-white px-6 text-base text-black outline-none transition disabled:opacity-60 disabled:cursor-not-allowed"
                             />
                         </div>
 
                         <div className="space-y-2">
-                            <label
-                                className="block text-sm font-medium text-[#2e2e2e]"
-                                htmlFor="newsletter-email"
-                            >
+                            <label className="block text-sm font-medium text-[#2e2e2e]">
                                 Email Address
                             </label>
                             <input
-                                id="newsletter-email"
-                                name="email"
                                 type="email"
-                                autoComplete="email"
                                 value={formValues.email}
                                 onChange={handleChange("email")}
                                 onBlur={handleBlur("email")}
-                                required
-                                inputMode="email"
-                                className="h-14 w-full rounded-full border border-transparent bg-white px-6 text-base text-black outline-none transition focus:border-[#b0b0b0] focus:shadow-[0_0_0_3px_rgba(0,0,0,0.08)]"
+                                disabled={isSubmitted}
+                                className="h-14 w-full rounded-full border border-transparent bg-white px-6 text-base text-black outline-none transition disabled:opacity-60 disabled:cursor-not-allowed"
                             />
                         </div>
 
-                        <div className="min-h-[1.25rem]" aria-live="polite">
-                            {shouldShowError && validationError ? (
-                                <p className="text-center text-sm font-medium text-[#b00000]">
+                        <div className="min-h-5 text-center">
+                            {shouldShowError && validationError && (
+                                <p className="text-sm font-medium text-[#b00000]">
                                     {validationError}
                                 </p>
-                            ) : successMessage ? (
-                                <p className="text-center text-sm font-medium text-[#1b5e20]">
-                                    {successMessage}
+                            )}
+                            {message && (
+                                <p className="text-sm font-medium text-[#1b5e20]">
+                                    {message}
                                 </p>
-                            ) : null}
+                            )}
                         </div>
 
                         <button
                             type="submit"
                             disabled={isSubmitDisabled}
-                            className="mx-auto flex h-14 w-full items-center justify-center rounded-full bg-white text-base font-medium text-[#2e2e2e] transition hover:bg-[#f7f7f7] disabled:cursor-not-allowed disabled:opacity-60"
+                            className="mx-auto flex h-14 w-full items-center justify-center rounded-full bg-white text-base font-medium text-[#2e2e2e] transition hover:bg-[#f7f7f7] disabled:opacity-60 disabled:cursor-not-allowed"
                         >
                             Sign Up
                         </button>
