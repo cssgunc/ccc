@@ -1,6 +1,9 @@
 import React from "react";
 import Header from "~/components/header";
 import landingImage from "~/assets/landing.png";
+import image1 from "~/assets/image1.png";
+import image2 from "~/assets/image2.png";
+import { useRef } from "react";
 
 export function meta() {
     return [
@@ -14,11 +17,15 @@ export function meta() {
 }
 
 export default function Home() {
+    const targetRef = useRef<HTMLDivElement | null>(null);
+    const scrollToTarget = () => {
+        targetRef.current?.scrollIntoView({ behavior: "smooth" }); // 'smooth' for animated scroll
+    };
     return (
         <>
             <Header />
 
-            <div className="relative -top-[140px] block w-full overflow-hidden">
+            <div className="relative -top-[140px] block w-full">
                 <img
                     src={landingImage}
                     alt="Landing"
@@ -30,66 +37,119 @@ export default function Home() {
                         A catalyst for community collaboration against high-risk
                         drinking.
                     </h1>
-                    <button className="font-bold bg-[#499dd6] text-white px-6 py-3 rounded-full hover:bg-blue-700 transition w-[13vw] max-w-[50%]">
+                    <button
+                        onClick={scrollToTarget}
+                        className="font-bold bg-[#499dd6] text-white px-6 py-3 rounded-full hover:bg-blue-700 transition w-[13vw] max-w-[50%]"
+                    >
                         Learn more
                     </button>
                 </div>
             </div>
 
-            <div className="-mt-[140px]">
-                <div className="w-full h-48 bg-[#D3D3D3] flex items-center justify-evenly text-black">
-                    <div>Placeholder</div>
-                    <div>Placeholder</div>
-                    <div>Placeholder</div>
-                    <div>Placeholder</div>
+            <div className="-mt-[140px] mb-[50px]" ref={targetRef}>
+                <div className="w-full h-48 bg-[#499dd6] flex items-center justify-evenly text-white">
+                    <div className="my-10 flex-col items-center text-center">
+                        <p className="text-5xl font-bold mb-[20px]">22.4%</p>
+                        <p className="text-lg">Binge Drinking Last 2 Weeks</p>
+                    </div>
+                    <div className="my-10 flex-col items-center text-center">
+                        <p className="text-5xl font-bold mb-[20px]">25.68%</p>
+                        <p className="text-lg">
+                            Polysubstance Use Past 3 Months
+                        </p>
+                    </div>
+                    <div className="my-10 flex-col items-center text-center">
+                        <p className="text-5xl font-bold mb-[20px]">339</p>
+                        <p className="text-lg">Alocohol Injuries Composite</p>
+                    </div>
                 </div>
-                <div className="flex flex-col items-center space-y-16 my-12 w-full">
+
+                <div className="mt-[100px] mb-[100px] text-black text-2xl ml-[50px] mr-[50px]">
+                    <p className="flex justify-center items-center mb-[50px]">
+                        The Campus & Community Coalition (CCC) is a
+                        collaborative force bringing together university and
+                        community partners to address the harms associated with
+                        high-risk drinking.
+                    </p>
+                    <p className="flex justify-center items-center">
+                        By fostering open dialogue, sharing power, and using
+                        data-driven strategies, we work to create an environment
+                        where everyone can thrive socially, academically, and
+                        economically.
+                    </p>
+                </div>
+
+                <div className="flex flex-col items-center space-y-16 my-12 w-full mb-[150px]">
                     <div className="flex items-stretch w-full h-[360px]">
                         <div className="w-[2.5%]"></div>
-                        <div className="w-[30%] bg-[#D3D3D3] flex items-center justify-center rounded-md">
-                            <span className="text-gray-700 text-lg text-center">
-                                Image
-                            </span>
+                        <div className="w-[45%] flex items-center justify-center">
+                            <img
+                                src={image1}
+                                alt="Mission"
+                                className="rounded-3xl border-10 border-[#F7C024] h-[120%]"
+                            />
                         </div>
                         <div className="w-[5%]"></div>
 
-                        <div className="w-[60%] bg-[#F7C024] text-white p-10 flex flex-col justify-between rounded-lg">
-                            <h2 className="text-right text-2xl font-semibold">
+                        <div className="w-[45%]  text-black p-10 flex flex-col justify-between">
+                            <h2 className="text-right text-3xl font-semibold">
                                 Our Mission
                             </h2>
-                            <p className="text-center mt-6">
+                            <p className="text-right mt-6">
                                 To promote a place where all people thrive, the
                                 CCC works in partnership across the community to
                                 reduce the harms associated with high-risk
                                 drinking.
                             </p>
-                            <div className="text-right mt-6">
-                                <div className="w-12 h-12 bg-white rounded-md inline-block"></div>
-                            </div>
-                        </div>
-                        <div className="w-[2.5%]"></div>
-                    </div>
-                    <div className="flex items-stretch w-full h-[360px]">
-                        <div className="w-[2.5%]"></div>
-                        <div className="w-[60%] bg-[#6A9F26] text-white p-10 flex flex-col justify-between rounded-lg">
-                            <h2 className="text-left text-2xl font-semibold">
-                                Our Vision
-                            </h2>
-                            <p className="text-center mt-6">
+                            <p className="text-right mt-6">
                                 We envision a community–University, Downtown
                                 district, and neighborhoods–that can thrive
                                 socially and economically while promoting health
                                 and wellbeing for all.
                             </p>
-                            <div className="text-left mt-6">
-                                <div className="w-12 h-12 bg-white rounded-md inline-block"></div>
-                            </div>
+                        </div>
+                        <div className="w-[2.5%]"></div>
+                    </div>
+                    <div className="flex items-stretch w-full h-[360px] mt-[75px]">
+                        <div className="w-[2.5%]"></div>
+                        <div className="w-[45%] text-black p-10 flex flex-col justify-between">
+                            <h2 className="text-left text-3xl font-semibold">
+                                Our Values
+                            </h2>
+                            <p className="text-left mt-6 text-[#499dd6] font-semibold text-xl">
+                                Shared Power
+                            </p>
+                            <p className="text-left mt-3">
+                                We listen to those most impacted by
+                                alcohol-related issues and empower them to
+                                co-create solutoins through a consensus-driven
+                                process.
+                            </p>
+                            <p className="text-left mt-6 text-[#F7C024] font-semibold text-xl">
+                                Data Driven
+                            </p>
+                            <p className="text-left mt-3">
+                                Our decisions are grounded in proven research
+                                and tailored to the unique needs of our
+                                community through local data analysis.
+                            </p>
+                            <p className="text-left mt-6 text-[#6A9F26] font-semibold text-xl">
+                                Collaboration
+                            </p>
+                            <p className="text-left mt-3">
+                                We believe cultural change happens through
+                                collective action, which is why partnerships
+                                with students, residents, businesses, and
+                                organizations drive everything we do.
+                            </p>
                         </div>
                         <div className="w-[5%]"></div>
-                        <div className="w-[30%] bg-[#D3D3D3] flex items-center justify-center rounded-md">
-                            <span className="text-gray-700 text-lg text-center">
-                                Image
-                            </span>
+                        <div className="w-[45%] flex items-center justify-center">
+                            <img
+                                src={image2}
+                                alt="Vision"
+                                className="rounded-3xl h-[120%] mt-[100px]"
+                            />
                         </div>
                         <div className="w-[2.5%]"></div>
                     </div>
