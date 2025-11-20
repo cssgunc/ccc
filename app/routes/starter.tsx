@@ -51,20 +51,34 @@ export default function Home() {
                 className="-mt-[140px] mb-[50px] scroll-mt-[90px]"
                 ref={targetRef}
             >
-                <div className="w-full h-48 bg-[#499dd6] flex items-center justify-evenly text-white">
-                    <div className="my-10 flex-col items-center text-center">
+                <div className="w-auto space-x-20 h-1/2 bg-[#499dd6] flex items-center px-12 justify-evenly text-white">
+                    <div className="my-10 flex-col items-center text-center w-1/3">
                         <p className="text-5xl font-bold mb-[20px]">22.4%</p>
-                        <p className="text-lg">Binge Drinking Last 2 Weeks</p>
-                    </div>
-                    <div className="my-10 flex-col items-center text-center">
-                        <p className="text-5xl font-bold mb-[20px]">25.68%</p>
                         <p className="text-lg">
-                            Polysubstance Use Past 3 Months
+                            {" "}
+                            of university students participating in the 2025
+                            NCHA survey drank five or more drinks at a sitting
+                            at least once in the past 2 weeks.
                         </p>
                     </div>
-                    <div className="my-10 flex-col items-center text-center">
+                    <div className="w-px h-24 bg-white" />
+                    <div className="my-10 flex-col items-center text-center w-1/3">
                         <p className="text-5xl font-bold mb-[20px]">339</p>
-                        <p className="text-lg">Alocohol Injuries Composite</p>
+                        <p className="text-lg">
+                            individuals under the age of 29 were
+                            treated/transported by Orange County EMS for
+                            substance-related injuries on or near UNC-CH during
+                            the 2024-2025 fiscal year.
+                        </p>
+                    </div>
+                    <div className="w-px h-24 bg-white" />
+                    <div className="my-10 flex-col items-center text-center w-1/3">
+                        <p className="text-5xl font-bold mb-[20px]">25.68%</p>
+                        <p className="text-lg">
+                            of UNC-CH students participating in the 2025 NCHA
+                            survey reported having used both alcohol and another
+                            substance within the past 3 months.
+                        </p>
                     </div>
                 </div>
 
@@ -82,10 +96,9 @@ export default function Home() {
                         economically.
                     </p>
                 </div>
-
                 <div className="flex flex-col items-center space-y-16 my-12 w-full mb-[250px]">
                     <div className="flex items-stretch w-full h-[360px]">
-                        <div className="w-[2.5%]"></div>
+                        <div className="w-[5%]"></div>
                         <div className="w-[45%] flex items-center justify-center">
                             <img
                                 src={image1}
@@ -94,7 +107,6 @@ export default function Home() {
                             />
                         </div>
                         <div className="w-[5%]"></div>
-
                         <div className="w-[45%]  text-black p-10 flex flex-col justify-between">
                             <div className="flex text-right justify-end items-center ">
                                 <img

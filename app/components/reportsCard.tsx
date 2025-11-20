@@ -17,7 +17,7 @@ export default function ReportCard({
 }: ReportCardProps) {
     return (
         <article
-            className={`rounded-2xl bg-white pt-6 pr-11 pb-5 pl-8 border-[3px] ${GREEN_BORDER} flex flex-col justify-between h-[474px]`}
+            className={`rounded-2xl bg-white pt-6 pr-11 pb-5 pl-8 border-[3px] ${GREEN_BORDER} flex flex-col justify-between`}
         >
             <div>
                 <h3 className={`text-[28px] font-semibold mb-2`}>{title}</h3>

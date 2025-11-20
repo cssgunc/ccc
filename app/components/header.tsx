@@ -40,7 +40,6 @@ function Header() {
         position: "sticky",
         top: shrink ? "0px" : "40px",
         margin: "0 auto",
-        marginTop: "40px",
         marginBottom: "40px",
         marginLeft: shrink ? "0px" : "40px",
         marginRight: shrink ? "0px" : "40px",
@@ -167,7 +166,7 @@ function Header() {
                         Who We Are
                     </Link>
                     <Link to="/research" style={textStyle}>
-                        Research
+                        Resources
                     </Link>
                     <Link to="/data" style={textStyle}>
                         Data
@@ -206,7 +205,7 @@ function Header() {
                     Who We Are
                 </Link>
                 <Link to="/research" style={menuLinkStyle} onClick={toggleMenu}>
-                    Research
+                    Resources
                 </Link>
                 <Link to="/data" style={menuLinkStyle} onClick={toggleMenu}>
                     Data

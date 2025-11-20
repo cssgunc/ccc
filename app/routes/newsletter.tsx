@@ -124,26 +124,29 @@ export default function Newsletter() {
     return (
         <main className="bg-white">
             <Header />
-            <section className="px-4 py-12 sm:py-16 lg:py-20">
+            <header
+                className="mt-20 mb-8 text-center"
+                style={{ backgroundColor: "#96d47c", padding: "2rem 0" }}
+            >
+                <h1 className="text-5xl tracking-tight">Our Newsletter!</h1>
+            </header>
+            <section className="mx-auto max-w-6xl px-4 pb-16">
                 <div className="mx-auto max-w-6xl">
                     <div className="space-y-6 text-center">
-                        <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center gap-6 bg-[rgba(73,158,215,0.75)] px-8 py-12 text-black">
-                            <p className="text-[64px] font-semibold leading-tight">
-                                Our Newsletter!
-                            </p>
-                        </div>
-                        <div className="space-y-2 text-center text-[32px] font-medium text-black">
-                            <p>
+                        <div className="space-y-2 text-center text-black">
+                            <p className="text-lg leading-relaxed mb-2">
                                 Stay in the loop with updates, events, and more!
                             </p>
-                            <p>Delivered approximately quarterly!</p>
+                            <p className="text-lg leading-relaxed">
+                                Delivered approximately quarterly!
+                            </p>
                         </div>
                     </div>
 
-                    <div className="mt-12 grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.4fr)_minmax(0,0.8fr)] lg:items-center">
+                    <div className="mt-12 grid gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.4fr)_minmax(0,0.8fr)] lg:items-center">
                         <div className="flex justify-center lg:h-full lg:items-center">
                             <div
-                                className="w-full max-w-sm overflow-hidden rounded-[32px] border border-[#e4e4e4]"
+                                className="w-full max-w-md overflow-hidden rounded-2xl border border-[#e4e4e4]"
                                 style={{ aspectRatio: "1 / 1" }}
                             >
                                 <img
@@ -155,7 +158,7 @@ export default function Newsletter() {
                         </div>
 
                         <form
-                            className="w-full rounded-[32px] border border-[#e4e4e4] p-10"
+                            className="w-full rounded-2xl border border-[#e4e4e4] p-10 flex flex-col gap-6"
                             style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
                             onSubmit={handleSubmit}
                             noValidate
@@ -180,7 +183,7 @@ export default function Newsletter() {
                                 />
                             </div>
 
-                            <div className="mt-6 space-y-2">
+                            <div className="space-y-2">
                                 <label
                                     className="block text-[20px] font-semibold text-black"
                                     htmlFor="newsletter-last-name"
@@ -200,7 +203,7 @@ export default function Newsletter() {
                                 />
                             </div>
 
-                            <div className="mt-6 space-y-2">
+                            <div className="space-y-2">
                                 <label
                                     className="block text-[20px] font-semibold text-black"
                                     htmlFor="newsletter-email"
@@ -253,9 +256,9 @@ export default function Newsletter() {
                             </button>
                         </form>
 
-                        <div className="flex justify-center lg:h-full lg:items-center">
+                        <div className="flex justify-end lg:h-full lg:items-center">
                             <div
-                                className="w-full max-w-sm overflow-hidden rounded-[32px] border border-[#e4e4e4]"
+                                className="w-full max-w-md overflow-hidden rounded-2xl border border-[#e4e4e4]"
                                 style={{ aspectRatio: "1 / 1" }}
                             >
                                 <img

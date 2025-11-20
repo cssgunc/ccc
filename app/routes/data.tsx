@@ -328,7 +328,7 @@ export default function Data() {
         <main>
             <Header />
             <header
-                className="mt-16 mb-8 text-center"
+                className="mt-20 mb-8 text-center"
                 style={{ backgroundColor: "#499ED7BF", padding: "2rem 0" }}
             >
                 <h1 className="text-5xl tracking-tight">Data</h1>

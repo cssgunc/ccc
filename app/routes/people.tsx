@@ -11,17 +11,12 @@ export default function People() {
     return (
         <>
             <Header />
-            <div className="page-heading">
-                <h1
-                    style={{
-                        fontSize: "64px",
-                        fontStyle: "semibold",
-                        color: "black",
-                    }}
-                >
-                    Who We Are
-                </h1>
-            </div>
+            <header
+                className="mt-20 mb-8 text-center"
+                style={{ backgroundColor: "#96d47c", padding: "2rem 0" }}
+            >
+                <h1 className="text-5xl tracking-tight">Who We Are</h1>
+            </header>
             <div className="director-info">
                 <img src={samanthaPfp} className="director-photo"></img>
                 <div className="director-info-text">
@@ -33,7 +28,7 @@ export default function People() {
                             fontSize: "36px",
                         }}
                     >
-                        Samantha Lu, MPH
+                        Samantha Luu, MPH
                     </h2>
                     <p
                         style={{
