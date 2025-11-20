@@ -229,9 +229,9 @@ export default function Newsletter() {
                                     <p className="text-center text-sm font-medium text-[#b00000]">
                                         {validationError}
                                     </p>
-                                ) : successMessage ? (
+                                ) : message ? (
                                     <p className="text-center text-sm font-medium text-[#1b5e20]">
-                                        {successMessage}
+                                        {message}
                                     </p>
                                 ) : null}
                             </div>
