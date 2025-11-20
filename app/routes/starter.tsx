@@ -30,7 +30,7 @@ export default function Home() {
                 <img
                     src={landingImage}
                     alt="Landing"
-                    className="w-full h-[520px] md:h-[650px] lg:h-[780px] object-cover brightness-50 saturate-200"
+                    className="w-full h-[520px] md:h-[650px] lg:h-[780px] object-cover"
                 />
 
                 <div className="absolute top-[55%] left-[8%] transform -translate-y-1/2 flex flex-col gap-6">
@@ -47,7 +47,10 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="-mt-[140px] mb-[50px]" ref={targetRef}>
+            <div
+                className="-mt-[140px] mb-[50px] scroll-mt-[90px]"
+                ref={targetRef}
+            >
                 <div className="w-full h-48 bg-[#499dd6] flex items-center justify-evenly text-white">
                     <div className="my-10 flex-col items-center text-center">
                         <p className="text-5xl font-bold mb-[20px]">22.4%</p>
@@ -65,7 +68,7 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="mt-[100px] mb-[100px] text-black text-2xl ml-[50px] mr-[50px] font-semibold">
+                <div className="mt-[100px] mb-[100px] text-black text-2xl ml-[150px] mr-[150px] font-semibold">
                     <p className="flex justify-center items-center mb-[50px]">
                         The Campus & Community Coalition (CCC) is a
                         collaborative force bringing together university and
@@ -80,7 +83,7 @@ export default function Home() {
                     </p>
                 </div>
 
-                <div className="flex flex-col items-center space-y-16 my-12 w-full mb-[150px]">
+                <div className="flex flex-col items-center space-y-16 my-12 w-full mb-[250px]">
                     <div className="flex items-stretch w-full h-[360px]">
                         <div className="w-[2.5%]"></div>
                         <div className="w-[45%] flex items-center justify-center">
@@ -93,24 +96,24 @@ export default function Home() {
                         <div className="w-[5%]"></div>
 
                         <div className="w-[45%]  text-black p-10 flex flex-col justify-between">
-                            <div className="flex text-right justify-end items-center">
+                            <div className="flex text-right justify-end items-center ">
                                 <img
                                     src={mission}
                                     alt="Mission Icon"
                                     className="mr-[20px] h-[75%]"
                                 />
-                                <h2 className="text-right text-3xl font-bold">
+                                <h2 className="text-right text-4xl font-bold">
                                     Our Mission
                                 </h2>
                             </div>
 
-                            <p className="text-right mt-6">
+                            <p className="text-right mt-6 text-lg">
                                 To promote a place where all people thrive, the
                                 CCC works in partnership across the community to
                                 reduce the harms associated with high-risk
                                 drinking.
                             </p>
-                            <p className="text-right mt-6">
+                            <p className="text-right mt-6 text-lg">
                                 We envision a community–University, Downtown
                                 district, and neighborhoods–that can thrive
                                 socially and economically while promoting health
@@ -123,7 +126,7 @@ export default function Home() {
                         <div className="w-[2.5%]"></div>
                         <div className="w-[45%] text-black p-10 flex flex-col justify-between">
                             <div className="flex items-center">
-                                <h2 className="text-left text-3xl font-bold">
+                                <h2 className="text-left text-4xl font-bold">
                                     Our Values
                                 </h2>
                                 <img
@@ -133,27 +136,27 @@ export default function Home() {
                                 />
                             </div>
 
-                            <p className="text-left mt-6 text-[#499dd6] font-semibold text-xl">
+                            <p className="text-left mt-6 text-[#499dd6] font-semibold text-2xl">
                                 Shared Power
                             </p>
-                            <p className="text-left mt-3">
+                            <p className="text-left mt-3 text-lg">
                                 We listen to those most impacted by
                                 alcohol-related issues and empower them to
                                 co-create solutions through a consensus-driven
                                 process.
                             </p>
-                            <p className="text-left mt-6 text-[#F7C024] font-semibold text-xl">
+                            <p className="text-left mt-6 text-[#F7C024] font-semibold text-2xl">
                                 Data Driven
                             </p>
-                            <p className="text-left mt-3">
+                            <p className="text-left mt-3 text-lg">
                                 Our decisions are grounded in proven research
                                 and tailored to the unique needs of our
                                 community through local data analysis.
                             </p>
-                            <p className="text-left mt-6 text-[#6A9F26] font-semibold text-xl">
+                            <p className="text-left mt-6 text-[#6A9F26] font-semibold text-2xl">
                                 Collaboration
                             </p>
-                            <p className="text-left mt-3">
+                            <p className="text-left mt-3 text-lg">
                                 We believe cultural change happens through
                                 collective action, which is why partnerships
                                 with students, residents, businesses, and
@@ -165,7 +168,7 @@ export default function Home() {
                             <img
                                 src={image2}
                                 alt="Vision"
-                                className="rounded-3xl h-[120%] mt-[100px]"
+                                className="rounded-3xl h-[120%] mt-[175px]"
                             />
                         </div>
                         <div className="w-[2.5%]"></div>
