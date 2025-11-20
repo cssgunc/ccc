@@ -339,7 +339,7 @@ export default function Data() {
                         These data visualizations originate from our
                         comprehensive <strong>Scorecard!</strong>
                         <br />
-                        All of our data is in available in our scorecard via the
+                        All of our data is available in our scorecard via the
                         button below.{" "}
                     </p>
                     <div className="flex justify-center">
