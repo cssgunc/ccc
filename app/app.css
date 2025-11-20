@@ -12,6 +12,13 @@ body {
     @media (prefers-color-scheme: dark) {
         color-scheme: dark;
     }
-    overflow-y: scroll;
-    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+html {
+    scrollbar-width: none; /* Firefox */
 }
