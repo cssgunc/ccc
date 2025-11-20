@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import logo from "app/assets/logo.png";
 import { Link } from "react-router-dom";
+import logo2 from "app/assets/logo2.png";
 
 const BREAKPOINT = 870;
 
@@ -141,7 +141,7 @@ function Header() {
                 >
                     <Link to="/">
                         <img
-                            src={logo}
+                            src={logo2}
                             alt="Logo"
                             style={{
                                 height: isMobile ? "90px" : "90px",
@@ -166,7 +166,7 @@ function Header() {
                         Who We Are
                     </Link>
                     <Link to="/research" style={textStyle}>
-                        Resources
+                        Research
                     </Link>
                     <Link to="/data" style={textStyle}>
                         Data
@@ -205,7 +205,7 @@ function Header() {
                     Who We Are
                 </Link>
                 <Link to="/research" style={menuLinkStyle} onClick={toggleMenu}>
-                    Resources
+                    Research
                 </Link>
                 <Link to="/data" style={menuLinkStyle} onClick={toggleMenu}>
                     Data
