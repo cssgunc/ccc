@@ -2,6 +2,11 @@ import React from "react";
 import "./people.css";
 import PartnerInfo from "../components/ParterInfo";
 import Header from "../components/header";
+import UncLogo from "../assets/icons/unc-chapel-hill.svg";
+import TownOfChapel from "../assets/icons/town-of-chapel-hill.svg";
+import OrangeCountyLogo from "../assets/icons/orange-county.svg";
+import AdditionalPartnersLogo from "../assets/icons/additional-partners.svg";
+import samanthaPfp from "../assets/samantha.png";
 export default function People() {
     return (
         <>
@@ -9,26 +14,57 @@ export default function People() {
             <div className="page-heading">
                 <h1
                     style={{
-                        fontSize: "48px",
-                        display: "flex",
-                        justifyContent: "center",
-                        margin: "40px",
+                        fontSize: "64px",
+                        fontStyle: "semibold",
+                        color: "black",
                     }}
                 >
                     Who We Are
                 </h1>
             </div>
             <div className="director-info">
-                <div className="director-photo"></div>
+                <img src={samanthaPfp} className="director-photo"></img>
                 <div className="director-info-text">
-                    <h2 className="director-name">Samantha Lu, MPH</h2>
-                    <p className="director-title">
+                    <h2
+                        style={{
+                            fontFamily: "Figtree",
+                            fontWeight: "600",
+                            fontStyle: "SemiBold",
+                            fontSize: "36px",
+                        }}
+                    >
+                        Samantha Lu, MPH
+                    </h2>
+                    <p
+                        style={{
+                            fontFamily: "Figtree",
+                            fontWeight: "400px",
+                            fontStyle: "Regular",
+                            fontSize: "24px",
+                        }}
+                    >
                         Campus & Community Coalition Director
                     </p>
-                    <p className="director-email">
+                    <p
+                        style={{
+                            fontFamily: "Figtree",
+                            fontWeight: "300px",
+                            fontStyle: "Italic",
+                            fontSize: "20px",
+                            color: "#499ED7",
+                            marginBottom: "8px",
+                        }}
+                    >
                         samantha@downtownchapelhill.com
                     </p>
-                    <p className="director-bio">
+                    <p
+                        style={{
+                            fontFamily: "Figtree",
+                            fontWeight: "400px",
+                            fontStyle: "Regular",
+                            fontSize: "20px",
+                        }}
+                    >
                         Samantha first worked with the CCC in 2018 and was
                         tickled to find her graduate team’s evaluation
                         deliverables in her new desk when she returned as
@@ -64,43 +100,72 @@ export default function People() {
                     </h1>
                     <div className="directors-grid">
                         <PartnerInfo
-                            title="Senior Engineer"
-                            text="Alice Johnson"
-                            role="Admin"
+                            title="Aaron Bachenheimer, Ed. D"
+                            text="Associate Vice Chancellor for Student Engagement"
+                            role="UNC-Chapel Hill"
                         />
                         <PartnerInfo
-                            title="Senior Engineer"
-                            text="Alice Johnson"
-                            role="Admin"
+                            title="Loryn Clark, A.I.C.P."
+                            text="Deputy Town Manager"
+                            role="Town of Chapel Hill"
                         />
                         <PartnerInfo
-                            title="Senior Engineer"
-                            text="Alice Johnson"
-                            role="Admin"
+                            title="Marcy Williams, M.P.H"
+                            text="Health Promotion and Education Services Director"
+                            role="Orange County Health Department"
                         />
                         <PartnerInfo
-                            title="Senior Engineer"
-                            text="Alice Johnson"
-                            role="Admin"
+                            title="Fran Muse, J.D."
+                            text="Director"
+                            role="Carolina Student Legal Services"
                         />
                         <PartnerInfo
-                            title="Senior Engineer"
-                            text="Alice Johnson"
-                            role="Admin"
+                            title="Melissa Cox, Ph.D."
+                            text="Faculty"
+                            role="UNC Gillings School of Global Public Health"
                         />
                     </div>
                 </div>
             </div>
 
+            <h1
+                style={{
+                    fontFamily: "Figtree",
+                    fontWeight: "500px",
+                    fontStyle: "Medium",
+                    fontSize: "40px",
+                    lineHeight: "100%",
+                    textAlign: "center",
+                    marginTop: "48px",
+                    marginBottom: "48px",
+                }}
+            >
+                Coalition Partners
+            </h1>
+
             <div className="coalition-partners">
                 <div className="coalition-partners-containers">
-                    <h1 style={{ fontSize: "32px", color: "#499ED7" }}>
-                        UNC-Chapel Hill
-                    </h1>
-                    <div className="divider"></div>
+                    <div className="partners-headers">
+                        <img
+                            src={UncLogo}
+                            style={{ marginRight: "10px" }}
+                        ></img>
+                        <h1 style={{ fontSize: "32px", color: "#499ED7" }}>
+                            UNC-Chapel Hill
+                        </h1>
+                    </div>
                     <div className="grid">
                         <div>
-                            <h2 style={{ fontSize: "24px" }}>
+                            <h2
+                                style={{
+                                    fontFamily: "Figtree",
+                                    fontWeight: "700px",
+                                    fontStyle: "Bold",
+                                    fontSize: "20px",
+                                    lineHeight: "24px",
+                                    letterSpacing: "0px",
+                                }}
+                            >
                                 Student Affairs
                             </h2>
                             <ul className="student-affairs-list">
@@ -140,10 +205,15 @@ export default function People() {
                     </div>
                 </div>
                 <div className="coalition-partners-containers">
-                    <h1 style={{ fontSize: "32px", color: "#499ED7" }}>
-                        Town of Chapel Hill
-                    </h1>
-                    <div className="divider"></div>
+                    <div className="partners-headers">
+                        <img
+                            src={TownOfChapel}
+                            style={{ marginRight: "10px" }}
+                        ></img>
+                        <h1 style={{ fontSize: "32px", color: "#6A9F26" }}>
+                            Town of Chapel Hill
+                        </h1>
+                    </div>
                     <div className="grid">
                         <div>
                             <p className="item-size">Manager's Office</p>
@@ -168,10 +238,15 @@ export default function People() {
                     </div>
                 </div>
                 <div className="coalition-partners-containers">
-                    <h1 style={{ fontSize: "32px", color: "#499ED7" }}>
-                        Orange County
-                    </h1>
-                    <div className="divider"></div>
+                    <div className="partners-headers">
+                        <img
+                            src={OrangeCountyLogo}
+                            style={{ marginRight: "10px" }}
+                        ></img>
+                        <h1 style={{ fontSize: "32px", color: "#FFC60B" }}>
+                            Orange County
+                        </h1>
+                    </div>
                     <div className="grid">
                         <div>
                             <p className="item-size">Health Department</p>
@@ -190,10 +265,15 @@ export default function People() {
                     </div>
                 </div>
                 <div className="coalition-partners-containers">
-                    <h1 style={{ fontSize: "32px", color: "#499ED7" }}>
-                        Additional Partners
-                    </h1>
-                    <div className="divider"></div>
+                    <div className="partners-headers">
+                        <img
+                            src={AdditionalPartnersLogo}
+                            style={{ marginRight: "10px" }}
+                        ></img>
+                        <h1 style={{ fontSize: "32px", color: "#05325C" }}>
+                            Additonal Partners
+                        </h1>
+                    </div>
                     <div className="grid">
                         <div>
                             <p className="item-size">
@@ -230,6 +310,121 @@ export default function People() {
                     </div>
                 </div>
             </div>
+
+            <div className="former-contributors">
+                <p
+                    style={{
+                        fontFamily: "Figtree",
+                        fontWeight: "400px",
+                        fontStyle: "Regular",
+                        fontSize: "36px",
+                        lineHeight: "100%",
+                        textAlign: "center",
+                        marginBottom: "32px",
+                    }}
+                >
+                    Former Contributors
+                </p>
+                <p
+                    style={{
+                        fontFamily: "Figtree",
+                        fontWeight: "300px",
+                        fontStyle: "Italic",
+                        fontSize: "20px",
+                        lineHeight: "100%",
+                        marginBottom: "32px",
+                        textAlign: "center",
+                    }}
+                >
+                    Thank you to past partners and supporters of the CCC! We
+                    couldn’t have gotten here without you.
+                </p>
+                <div className="former-staff-box">
+                    <p
+                        style={{
+                            fontFamily: "Figtree",
+                            fontWeight: "600px",
+                            fontStyle: "SemiBold",
+                            fontSize: "20px",
+                            lineHeight: "100%",
+                            color: "#499ED7",
+                            marginBottom: "32px",
+                        }}
+                    >
+                        Previous Staff and Leadership
+                    </p>
+                    <ul className="former-staff-list">
+                        <li>Former Chapel Hill Major Kleinschmidt, J.D.</li>
+                        <li>
+                            Former Orange County Health Director Collen Bridger,
+                            Ph.D, M.P.H.
+                        </li>
+                        <li>Elinor Landess, M.A.</li>
+                        <li>Former UNC-CH Chancellor Holden Thorp, Ph.D.</li>
+                        <li>Barb Alvarez Martin, Ph.D., M.P.H.</li>
+                    </ul>
+                </div>
+                <p
+                    style={{
+                        fontFamily: "Figtree",
+                        fontWeight: "400px",
+                        fontStyle: "Regular",
+                        fontSize: "36px",
+                        lineHeight: "100%",
+                        textAlign: "center",
+                        marginBottom: "32px",
+                    }}
+                >
+                    Former Interns
+                </p>
+                <p
+                    style={{
+                        fontFamily: "Figtree",
+                        fontWeight: "600px",
+                        fontStyle: "SemiBold",
+                        fontSize: "20px",
+                        lineHeight: "100%",
+                        marginBottom: "32px",
+                        textAlign: "center",
+                    }}
+                >
+                    Thank you to all former interns and graduate capstone teams
+                    who have dedicated numerous hours and skills to further the
+                    CCC's work and promote a healthy community!
+                </p>
+            </div>
+            <p
+                style={{
+                    fontFamily: "Figtree",
+                    fontWeight: "400px",
+                    fontStyle: "Regular",
+                    fontSize: "36px",
+                    textAlign: "center",
+                    marginBottom: "48px",
+                }}
+            >
+                Funding Partners
+            </p>
+            <p
+                style={{
+                    fontFamily: "Figtree",
+                    fontWeight: "300px",
+                    fontStyle: "Italic",
+                    fontSize: "24px",
+                    lineHeight: "34px",
+                    textAlign: "center",
+                    marginBottom: "48px",
+                    width: "969px",
+                    height: "102px",
+                    marginLeft: "auto",
+                    marginRight: "auto",
+                }}
+            >
+                Our work can't be done without the support of funding partners.
+                Thank you to Orange County Government, UNC-Chapel Hill, the Town
+                of Chapel Hill, and the Orange County ABC Board for their
+                continuous support.
+            </p>
         </>
     );
 }
