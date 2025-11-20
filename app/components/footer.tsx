@@ -9,7 +9,7 @@ export default function Footer() {
         padding: "60px 80px",
         display: "flex",
         justifyContent: "space-between",
-        alignItems: "flex-start",
+        alignItems: "center",
         boxSizing: "border-box",
     } as const;
 
@@ -21,6 +21,7 @@ export default function Footer() {
         fontSize: "1rem",
         lineHeight: "1.8",
         marginTop: "0px",
+        justifyContent: "center",
     } as const;
 
     const headingStyle = {
