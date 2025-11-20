@@ -2,6 +2,8 @@ import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
 import dotenv from "dotenv";
+import client from "@mailchimp/mailchimp_marketing";
+
 dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
@@ -13,6 +15,40 @@ const CI_IDS = {
 
 const app = express();
 const port = 3000;
+
+app.use(express.json());
+
+client.setConfig({
+    apiKey: process.env.MAILCHIMP_API_KEY,
+    server: process.env.MAILCHIMP_SERVER_PREFIX,
+});
+
+app.post("/api/add-contact", async (req, res) => {
+    try {
+        const { email, firstName, lastName } = req.body;
+
+        const response = await client.lists.addListMember(
+            process.env.MAILCHIMP_AUDIENCE_ID,
+            {
+                email_address: email,
+                status: "subscribed",
+                merge_fields: {
+                    FNAME: firstName || "",
+                    LNAME: lastName || "",
+                },
+            }
+        );
+
+        res.status(200).json({ success: true, data: response });
+    } catch (error) {
+        console.error("Mailchimp Error:", error);
+
+        res.status(500).json({
+            success: false,
+            error: error.response?.body || error.message,
+        });
+    }
+});
 
 app.use(express.static(path.join(__dirname, "build")));
 app.use(express.json());
