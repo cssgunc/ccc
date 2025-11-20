@@ -47,7 +47,7 @@ function Header() {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        backgroundColor: "lightgray",
+        backgroundColor: "white",
         borderRadius: shrink ? "0px" : "100px",
         padding: shrink ? "5px 20px" : "0px 20px",
         fontSize: shrink ? "18px" : "20px",
@@ -55,6 +55,7 @@ function Header() {
         gap: "125px",
         zIndex: 1000,
         transition: "all 0.4s ease",
+        boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.2)",
     } as const;
 
     const linkContainerStyle = {
