@@ -15,6 +15,11 @@ const INITIAL_FORM = {
     email: "",
 };
 
+const SIGN_UP_BUTTON_COLORS = {
+    base: "#499ED7",
+    hover: "#499ED7",
+} as const;
+
 const archivedNewsletters = [
     {
         title: "Fall Newsletter",
@@ -123,20 +128,24 @@ export default function Newsletter() {
             <Header />
             <section className="px-4 py-12 sm:py-16 lg:py-20">
                 <div className="mx-auto max-w-6xl">
-                    <div className="text-center">
-                        <h1 className="text-4xl font-semibold text-black sm:text-5xl">
-                            Our Newsletter
-                        </h1>
-                        <p className="mt-4 text-base text-[#444444] sm:text-lg">
-                            Stay in the loop with updates, events, and more.
-                            Delivered approximately quarterly!
-                        </p>
+                    <div className="space-y-6 text-center">
+                        <div className="relative left-1/2 flex w-screen -translate-x-1/2 flex-col items-center justify-center gap-6 bg-[rgba(73,158,215,0.75)] px-8 py-12 text-black">
+                            <p className="text-[64px] font-semibold leading-tight">
+                                Our Newsletter!
+                            </p>
+                        </div>
+                        <div className="space-y-2 text-center text-[32px] font-medium text-black">
+                            <p>
+                                Stay in the loop with updates, events, and more!
+                            </p>
+                            <p>Delivered approximately quarterly!</p>
+                        </div>
                     </div>
 
-                    <div className="mt-12 grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-start">
-                        <div className="flex justify-center">
+                    <div className="mt-12 grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.4fr)_minmax(0,0.8fr)] lg:items-center">
+                        <div className="flex justify-center lg:h-full lg:items-center">
                             <div
-                                className="w-full max-w-sm overflow-hidden rounded-[36px] shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
+                                className="w-full max-w-sm overflow-hidden rounded-[32px] border border-[#e4e4e4]"
                                 style={{ aspectRatio: "1 / 1" }}
                             >
                                 <img
@@ -148,13 +157,14 @@ export default function Newsletter() {
                         </div>
 
                         <form
-                            className="rounded-[40px] bg-[#f2f2f2] p-8 shadow-[0_25px_55px_rgba(0,0,0,0.12)]"
+                            className="w-full rounded-[32px] border border-[#e4e4e4] p-10"
+                            style={{ backgroundColor: "rgba(0, 0, 0, 0.05)" }}
                             onSubmit={handleSubmit}
                             noValidate
                         >
                             <div className="space-y-2">
                                 <label
-                                    className="block text-sm font-medium text-[#2e2e2e]"
+                                    className="block text-[20px] font-semibold text-black"
                                     htmlFor="newsletter-first-name"
                                 >
                                     First Name
@@ -168,13 +178,13 @@ export default function Newsletter() {
                                     onChange={handleChange("firstName")}
                                     onBlur={handleBlur("firstName")}
                                     required
-                                    className="h-14 w-full rounded-full border border-transparent bg-white px-6 text-base text-black outline-none transition focus:border-[#b0b0b0] focus:shadow-[0_0_0_3px_rgba(0,0,0,0.08)]"
+                                    className="h-14 w-full rounded-full border border-transparent bg-white px-6 text-base text-black outline-none transition focus:border-[#b0b0b0] focus-visible:ring-2 focus-visible:ring-[#7fb8ff]"
                                 />
                             </div>
 
                             <div className="mt-6 space-y-2">
                                 <label
-                                    className="block text-sm font-medium text-[#2e2e2e]"
+                                    className="block text-[20px] font-semibold text-black"
                                     htmlFor="newsletter-last-name"
                                 >
                                     Last Name
@@ -188,13 +198,13 @@ export default function Newsletter() {
                                     onChange={handleChange("lastName")}
                                     onBlur={handleBlur("lastName")}
                                     required
-                                    className="h-14 w-full rounded-full border border-transparent bg-white px-6 text-base text-black outline-none transition focus:border-[#b0b0b0] focus:shadow-[0_0_0_3px_rgba(0,0,0,0.08)]"
+                                    className="h-14 w-full rounded-full border border-transparent bg-white px-6 text-base text-black outline-none transition focus:border-[#b0b0b0] focus-visible:ring-2 focus-visible:ring-[#7fb8ff]"
                                 />
                             </div>
 
                             <div className="mt-6 space-y-2">
                                 <label
-                                    className="block text-sm font-medium text-[#2e2e2e]"
+                                    className="block text-[20px] font-semibold text-black"
                                     htmlFor="newsletter-email"
                                 >
                                     Email Address
@@ -209,7 +219,7 @@ export default function Newsletter() {
                                     onBlur={handleBlur("email")}
                                     required
                                     inputMode="email"
-                                    className="h-14 w-full rounded-full border border-transparent bg-white px-6 text-base text-black outline-none transition focus:border-[#b0b0b0] focus:shadow-[0_0_0_3px_rgba(0,0,0,0.08)]"
+                                    className="h-14 w-full rounded-full border border-transparent bg-white px-6 text-base text-black outline-none transition focus:border-[#b0b0b0] focus-visible:ring-2 focus-visible:ring-[#7fb8ff]"
                                 />
                             </div>
 
@@ -231,15 +241,23 @@ export default function Newsletter() {
                             <button
                                 type="submit"
                                 disabled={isSubmitDisabled}
-                                className="mt-6 flex h-14 w-full items-center justify-center rounded-full bg-[#3c8df2] text-base font-semibold text-white transition hover:bg-[#2f7eda] disabled:cursor-not-allowed disabled:opacity-60"
+                                style={
+                                    {
+                                        "--btn-color":
+                                            SIGN_UP_BUTTON_COLORS.base,
+                                        "--btn-hover-color":
+                                            SIGN_UP_BUTTON_COLORS.hover,
+                                    } as React.CSSProperties
+                                }
+                                className="mt-6 flex h-14 w-full items-center justify-center rounded-full bg-[var(--btn-color)] text-[20px] font-semibold text-white transition-colors hover:bg-[var(--btn-hover-color)] disabled:cursor-not-allowed disabled:opacity-60"
                             >
                                 Sign Up
                             </button>
                         </form>
 
-                        <div className="flex justify-center">
+                        <div className="flex justify-center lg:h-full lg:items-center">
                             <div
-                                className="w-full max-w-sm overflow-hidden rounded-[36px] shadow-[0_20px_40px_rgba(0,0,0,0.15)]"
+                                className="w-full max-w-sm overflow-hidden rounded-[32px] border border-[#e4e4e4]"
                                 style={{ aspectRatio: "1 / 1" }}
                             >
                                 <img
@@ -251,8 +269,8 @@ export default function Newsletter() {
                         </div>
                     </div>
 
-                    <section className="mt-16 border-t border-[#e4e4e4] pt-10">
-                        <h2 className="text-center text-3xl font-semibold text-black">
+                    <section className="mt-16 pt-10">
+                        <h2 className="text-left text-[32px] font-medium text-black">
                             Archived Newsletters
                         </h2>
                         <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">

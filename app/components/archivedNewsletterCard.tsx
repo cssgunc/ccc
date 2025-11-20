@@ -9,25 +9,57 @@ export default function ArchivedNewsletterCard({
     date,
     href,
 }: ArchivedNewsletterCardProps) {
-    const card = (
-        <div className="flex h-32 w-full flex-col justify-between rounded-3xl bg-[#efefef] px-6 py-4 shadow-[0_6px_16px_rgba(0,0,0,0.08)] transition hover:-translate-y-0.5 hover:shadow-[0_10px_20px_rgba(0,0,0,0.12)]">
-            <p className="text-lg font-semibold text-[#1c1c1c]">{title}</p>
-            <p className="text-sm text-[#4a4a4a]">{date}</p>
-        </div>
+    const ArrowIcon = (
+        <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                d="M9 6L15 12L9 18"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+            />
+        </svg>
     );
 
-    if (!href) {
-        return card;
-    }
-
     return (
-        <a
-            href={href}
-            target="_blank"
-            rel="noreferrer"
-            className="focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1c75ff]"
+        <div
+            className="flex h-[197px] w-[366px] flex-col gap-2 rounded-[16px] border-4 border-[#6A9F26] bg-white p-5"
+            style={{
+                fontFamily: '"Figtree", sans-serif',
+            }}
         >
-            {card}
-        </a>
+            <div>
+                <p className="text-2xl font-normal text-[#1c1c1c]">{title}</p>
+                <p className="text-base font-normal text-[#000000]">{date}</p>
+            </div>
+            <div className="mt-auto flex justify-end pt-2">
+                {href ? (
+                    <a
+                        href={href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-3 rounded-full bg-[#6cb33f] px-5 py-2 text-[20px] font-semibold text-white transition hover:bg-[#5a9a33] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#1c75ff]"
+                    >
+                        View
+                        <span aria-hidden="true" className="text-white">
+                            {ArrowIcon}
+                        </span>
+                    </a>
+                ) : (
+                    <span className="inline-flex items-center gap-3 rounded-full bg-[#c4c4c4] px-5 py-2 text-[20px] font-semibold text-white">
+                        View
+                        <span aria-hidden="true" className="text-white">
+                            {ArrowIcon}
+                        </span>
+                    </span>
+                )}
+            </div>
+        </div>
     );
 }
