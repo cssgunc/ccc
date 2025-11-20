@@ -3,6 +3,8 @@ import Header from "~/components/header";
 import landingImage from "~/assets/landing.png";
 import image1 from "~/assets/image1.png";
 import image2 from "~/assets/image2.png";
+import mission from "~/assets/icons/our-mission.svg";
+import values from "~/assets/icons/our-values.svg";
 import { useRef } from "react";
 
 export function meta() {
@@ -64,7 +66,7 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="mt-[100px] mb-[100px] text-black text-2xl ml-[50px] mr-[50px]">
+                <div className="mt-[100px] mb-[100px] text-black text-2xl ml-[50px] mr-[50px] font-semibold">
                     <p className="flex justify-center items-center mb-[50px]">
                         The Campus & Community Coalition (CCC) is a
                         collaborative force bringing together university and
@@ -92,9 +94,17 @@ export default function Home() {
                         <div className="w-[5%]"></div>
 
                         <div className="w-[45%]  text-black p-10 flex flex-col justify-between">
-                            <h2 className="text-right text-3xl font-semibold">
-                                Our Mission
-                            </h2>
+                            <div className="flex text-right justify-end items-center">
+                                <img
+                                    src={mission}
+                                    alt="Mission Icon"
+                                    className="mr-[20px] h-[75%]"
+                                />
+                                <h2 className="text-right text-3xl font-bold">
+                                    Our Mission
+                                </h2>
+                            </div>
+
                             <p className="text-right mt-6">
                                 To promote a place where all people thrive, the
                                 CCC works in partnership across the community to
@@ -113,16 +123,24 @@ export default function Home() {
                     <div className="flex items-stretch w-full h-[360px] mt-[75px]">
                         <div className="w-[2.5%]"></div>
                         <div className="w-[45%] text-black p-10 flex flex-col justify-between">
-                            <h2 className="text-left text-3xl font-semibold">
-                                Our Values
-                            </h2>
+                            <div className="flex items-center">
+                                <h2 className="text-left text-3xl font-bold">
+                                    Our Values
+                                </h2>
+                                <img
+                                    src={values}
+                                    alt="Values Icon"
+                                    className="ml-[20px] h-[75%]"
+                                />
+                            </div>
+
                             <p className="text-left mt-6 text-[#499dd6] font-semibold text-xl">
                                 Shared Power
                             </p>
                             <p className="text-left mt-3">
                                 We listen to those most impacted by
                                 alcohol-related issues and empower them to
-                                co-create solutoins through a consensus-driven
+                                co-create solutions through a consensus-driven
                                 process.
                             </p>
                             <p className="text-left mt-6 text-[#F7C024] font-semibold text-xl">
