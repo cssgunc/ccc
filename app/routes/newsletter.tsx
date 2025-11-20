@@ -51,20 +51,13 @@ const archivedNewsletters = [
 export default function Newsletter() {
     const [formValues, setFormValues] =
         React.useState<typeof INITIAL_FORM>(INITIAL_FORM);
+    const [message, setMessage] = React.useState<string | null>(null);
+    const [isSubmitted, setIsSubmitted] = React.useState(false);
     const [hasInteracted, setHasInteracted] = React.useState(false);
-    const [successMessage, setSuccessMessage] = React.useState<string | null>(
-        null
-    );
 
-    const fieldsComplete = React.useMemo(
-        () => areRequiredFilled(formValues),
-        [formValues]
-    );
-
-    const emailValid = React.useMemo(
-        () => isEmailValid(formValues.email),
-        [formValues.email]
-    );
+    const fieldsComplete = areRequiredFilled(formValues);
+    const emailValid = isEmailValid(formValues.email);
+    const isSubmitDisabled = !fieldsComplete || !emailValid || isSubmitted;
 
     const validationError = !fieldsComplete
         ? "All required fields are not filled."
@@ -72,23 +65,24 @@ export default function Newsletter() {
           ? "Invalid email format."
           : null;
 
-    const shouldShowError = hasInteracted && Boolean(validationError);
-    const isSubmitDisabled = !fieldsComplete || !emailValid;
+    const shouldShowError =
+        hasInteracted && !message && Boolean(validationError);
 
     const handleChange =
         (field: keyof typeof INITIAL_FORM) =>
         (event: React.ChangeEvent<HTMLInputElement>) => {
-            const { value } = event.target;
-
+            if (isSubmitted) return;
             setHasInteracted(true);
-            setSuccessMessage(null);
+
             setFormValues((prev) => ({
                 ...prev,
-                [field]: value,
+                [field]: event.target.value,
             }));
         };
 
     const handleBlur = (field: keyof typeof INITIAL_FORM) => () => {
+        if (isSubmitted) return;
+
         setFormValues((prev) => ({
             ...prev,
             [field]:
@@ -98,20 +92,8 @@ export default function Newsletter() {
         }));
     };
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        setHasInteracted(true);
-
-        if (validationError) {
-            setSuccessMessage(null);
-            setFormValues((prev) => ({
-                ...prev,
-                email: normalizeEmail(prev.email),
-                firstName: prev.firstName.trim(),
-                lastName: prev.lastName.trim(),
-            }));
-            return;
-        }
 
         const normalizedForm = {
             firstName: formValues.firstName.trim(),
@@ -119,8 +101,24 @@ export default function Newsletter() {
             email: normalizeEmail(formValues.email),
         };
 
-        setFormValues(normalizedForm);
-        setSuccessMessage("Thanks for signing up!");
+        try {
+            const res = await fetch("/api/add-contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(normalizedForm),
+            });
+
+            const data = await res.json();
+
+            if (data.success) {
+                setMessage("Thanks for signing up!");
+                setIsSubmitted(true);
+            } else {
+                setMessage("Error signing up. Please try again.");
+            }
+        } catch {
+            setMessage("Server error. Please try again.");
+        }
     };
 
     return (
