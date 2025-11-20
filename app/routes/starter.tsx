@@ -26,7 +26,6 @@ export default function Home() {
     return (
         <>
             <Header />
-
             <div className="relative -top-[140px] block w-full">
                 <img
                     src={landingImage}
