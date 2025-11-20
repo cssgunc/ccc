@@ -13,3 +13,12 @@ body {
         color-scheme: dark;
     }
 }
+
+html::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
+html {
+    scrollbar-width: none; /* Firefox */
+}
