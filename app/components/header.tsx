@@ -41,7 +41,7 @@ function Header() {
         top: shrink ? "0px" : "40px",
         margin: "0 auto",
         marginTop: "40px",
-        marginBottom: "10px",
+        marginBottom: "40px",
         marginLeft: shrink ? "0px" : "40px",
         marginRight: shrink ? "0px" : "40px",
         display: "flex",
