@@ -1,4 +1,5 @@
 import React from "react";
+import StrategicPlan from "app/assets/icons/strategic-plan.svg";
 
 interface PlanCardProps {
     title?: string;
@@ -18,9 +19,14 @@ export default function PlanCard({
             <div>
                 <div>
                     <h2
-                        className={`text-5xl font-bold mb-4 ${BLUE_COLOR} flex`}
+                        className={`text-5xl font-bold mb-6 ${BLUE_COLOR} flex`}
                     >
                         {title}
+                        <img
+                            src={StrategicPlan}
+                            alt="Strategic Plan Icon"
+                            className="w-15 h-15 ml-5 -translate-y-2.5"
+                        />
                     </h2>
 
                     <p className="text-[28px] font-medium leading-11">

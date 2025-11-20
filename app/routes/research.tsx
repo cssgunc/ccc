@@ -2,6 +2,7 @@ import React from "react";
 import Header from "~/components/header";
 import PlanCard from "~/components/planCard";
 import ReportCard from "~/components/reportsCard";
+import ReportIcon from "app/assets/icons/reports.svg";
 
 import planPdf from "app/assets/CCC-Strategic-Plan-2024-27-1.pdf";
 import report1 from "app/assets/Town-Gown-Full-Report_final.Report.1.pdf";
@@ -55,8 +56,13 @@ export default function Research() {
 
                 <div className="mx-auto max-w-[1044px] mt-16">
                     <div className="mb-8 flex items-center">
-                        <h2 className="text-5xl font-bold text-[#6A9F26]">
+                        <h2 className="text-5xl font-bold text-[#6A9F26] flex items-center">
                             Reports
+                            <img
+                                src={ReportIcon}
+                                alt="Reports Icon"
+                                className="w-15 h-15 ml-5"
+                            />
                         </h2>
                     </div>
                     <section className="mt-8">
