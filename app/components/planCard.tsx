@@ -29,7 +29,7 @@ export default function PlanCard({
                         />
                     </h2>
 
-                    <p className="text-[28px] font-medium leading-11">
+                    <p className="text-[24px] font-medium leading-11">
                         {summary}
                     </p>
                 </div>

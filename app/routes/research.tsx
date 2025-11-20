@@ -18,7 +18,7 @@ export default function Research() {
     return (
         <main>
             <Header />
-            <div className="bg-[#FFC60B99] pt-12 pb-12">
+            <div className="bg-[#FFC60B99] pt-10 pb-10">
                 <div className="max-w-6xl mx-auto px-4">
                     <h1 className="text-6xl text-center font-semibold">
                         Resources
