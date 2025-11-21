@@ -250,7 +250,7 @@ export default function Newsletter() {
                                             SIGN_UP_BUTTON_COLORS.hover,
                                     } as React.CSSProperties
                                 }
-                                className="mt-6 flex h-14 w-full items-center justify-center rounded-full bg-[var(--btn-color)] text-[20px] font-semibold text-white transition-colors hover:bg-[var(--btn-hover-color)] disabled:cursor-not-allowed disabled:opacity-60"
+                                className=" flex h-14 w-full items-center justify-center rounded-full bg-[var(--btn-color)] text-[20px] font-semibold text-white transition-colors hover:bg-[var(--btn-hover-color)] disabled:cursor-not-allowed disabled:opacity-60"
                             >
                                 Sign Up
                             </button>
