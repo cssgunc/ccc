@@ -12,7 +12,7 @@
     flex-direction: column;
 }
 
-.director-name {
+.directorName {
     font-family: Figtree;
     font-weight: 500;
     font-style: Medium;
@@ -21,7 +21,7 @@
     letter-spacing: 0%;
 }
 
-.director-bio {
+.directorBio {
     font-family: Figtree;
     font-weight: 400;
     font-style: Regular;
@@ -32,7 +32,7 @@
     opacity: 0.5;
 }
 
-.director-role {
+.directorRole {
     font-family: Figtree;
     font-weight: 400;
     font-style: Regular;

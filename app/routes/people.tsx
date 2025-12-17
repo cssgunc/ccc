@@ -1,12 +1,13 @@
 import React from "react";
-import "./people.css";
-import PartnerInfo from "../components/ParterInfo";
+import styles from "./people.module.css";
+import PartnerInfo from "../components/PartnerInfo";
 import Header from "../components/header";
 import UncLogo from "../assets/icons/unc-chapel-hill.svg";
 import TownOfChapel from "../assets/icons/town-of-chapel-hill.svg";
 import OrangeCountyLogo from "../assets/icons/orange-county.svg";
 import AdditionalPartnersLogo from "../assets/icons/additional-partners.svg";
 import samanthaPfp from "../assets/samantha.png";
+
 export default function People() {
     return (
         <>
@@ -17,9 +18,9 @@ export default function People() {
             >
                 <h1 className="text-5xl tracking-tight">Who We Are</h1>
             </header>
-            <div className="director-info">
-                <img src={samanthaPfp} className="director-photo"></img>
-                <div className="director-info-text">
+            <div className={styles.directorInfo}>
+                <img src={samanthaPfp} className={styles.directorPhoto}></img>
+                <div className={styles.directorInfoText}>
                     <h2
                         style={{
                             fontFamily: "Figtree",
@@ -61,7 +62,7 @@ export default function People() {
                         }}
                     >
                         Samantha first worked with the CCC in 2018 and was
-                        tickled to find her graduate team’s evaluation
+                        tickled to find her graduate team's evaluation
                         deliverables in her new desk when she returned as
                         Director in 2022. As a two-time Tar Heel (BA 2014, MPH
                         2019), she is energized to serve the Chapel Hill
@@ -69,7 +70,7 @@ export default function People() {
                         mental and social well-being, sexual health, and youth
                         leadership development in domestic and global settings,
                         often wearing many different hats in those roles. When
-                        she’s not facilitating CCC meetings or supporting CCC
+                        she's not facilitating CCC meetings or supporting CCC
                         partners, you can find her sipping coffee, gardening,
                         checking out local events, and traveling with her
                         husband and dog.
@@ -83,7 +84,7 @@ export default function People() {
                     maxWidth: "1093px",
                 }}
             >
-                <div className="board-of-directors-container">
+                <div className={styles.boardOfDirectorsContainer}>
                     <h1
                         style={{
                             fontSize: "40px",
@@ -93,7 +94,7 @@ export default function People() {
                     >
                         Board of Directors
                     </h1>
-                    <div className="directors-grid">
+                    <div className={styles.directorsGrid}>
                         <PartnerInfo
                             title="Aaron Bachenheimer, Ed. D"
                             text="Associate Vice Chancellor for Student Engagement"
@@ -138,9 +139,9 @@ export default function People() {
                 Coalition Partners
             </h1>
 
-            <div className="coalition-partners">
-                <div className="coalition-partners-containers">
-                    <div className="partners-headers">
+            <div className={styles.coalitionPartners}>
+                <div className={styles.coalitionPartnersContainers}>
+                    <div className={styles.partnersHeaders}>
                         <img
                             src={UncLogo}
                             style={{ marginRight: "10px" }}
@@ -149,7 +150,7 @@ export default function People() {
                             UNC-Chapel Hill
                         </h1>
                     </div>
-                    <div className="grid">
+                    <div className={styles.grid}>
                         <div>
                             <h2
                                 style={{
@@ -163,7 +164,7 @@ export default function People() {
                             >
                                 Student Affairs
                             </h2>
-                            <ul className="student-affairs-list">
+                            <ul className={styles.studentAffairsList}>
                                 <li>Off-Campus Student Life</li>
                                 <li>Student Wellness</li>
                                 <li>Office of Fraternity & Sorority Life</li>
@@ -177,30 +178,32 @@ export default function People() {
                         </div>
 
                         <div>
-                            <p className="item-size">Carolina Housing</p>
-                            <p className="item-size">
+                            <p className={styles.itemSize}>Carolina Housing</p>
+                            <p className={styles.itemSize}>
                                 Carolina Center for Public Service
                             </p>
-                            <p className="item-size">Athletics</p>
-                            <p className="item-size">
+                            <p className={styles.itemSize}>Athletics</p>
+                            <p className={styles.itemSize}>
                                 UNC Gillings School of Global Public Health
                             </p>
                         </div>
 
                         <div>
-                            <p className="item-size">Student Government</p>
-                            <p className="item-size">
+                            <p className={styles.itemSize}>
+                                Student Government
+                            </p>
+                            <p className={styles.itemSize}>
                                 Bowles Center for Alcohol Studies
                             </p>
-                            <p className="item-size">Police</p>
-                            <p className="item-size">
+                            <p className={styles.itemSize}>Police</p>
+                            <p className={styles.itemSize}>
                                 Graduate & Professional Student Government
                             </p>
                         </div>
                     </div>
                 </div>
-                <div className="coalition-partners-containers">
-                    <div className="partners-headers">
+                <div className={styles.coalitionPartnersContainers}>
+                    <div className={styles.partnersHeaders}>
                         <img
                             src={TownOfChapel}
                             style={{ marginRight: "10px" }}
@@ -209,31 +212,39 @@ export default function People() {
                             Town of Chapel Hill
                         </h1>
                     </div>
-                    <div className="grid">
+                    <div className={styles.grid}>
                         <div>
-                            <p className="item-size">Manager's Office</p>
-                            <p className="item-size">Community Connections</p>
-                            <p className="item-size">Economic Development</p>
-                            <p className="item-size">
+                            <p className={styles.itemSize}>Manager's Office</p>
+                            <p className={styles.itemSize}>
+                                Community Connections
+                            </p>
+                            <p className={styles.itemSize}>
+                                Economic Development
+                            </p>
+                            <p className={styles.itemSize}>
                                 Community Arts & Culture
                             </p>
                         </div>
 
                         <div>
-                            <p className="item-size">Community Relations</p>
-                            <p className="item-size">Police Department</p>
-                            <p className="item-size">Emergency Management</p>
+                            <p className={styles.itemSize}>
+                                Community Relations
+                            </p>
+                            <p className={styles.itemSize}>Police Department</p>
+                            <p className={styles.itemSize}>
+                                Emergency Management
+                            </p>
                         </div>
 
                         <div>
-                            <p className="item-size">Communications</p>
-                            <p className="item-size">Code Enforcement</p>
-                            <p className="item-size">Fire Department</p>
+                            <p className={styles.itemSize}>Communications</p>
+                            <p className={styles.itemSize}>Code Enforcement</p>
+                            <p className={styles.itemSize}>Fire Department</p>
                         </div>
                     </div>
                 </div>
-                <div className="coalition-partners-containers">
-                    <div className="partners-headers">
+                <div className={styles.coalitionPartnersContainers}>
+                    <div className={styles.partnersHeaders}>
                         <img
                             src={OrangeCountyLogo}
                             style={{ marginRight: "10px" }}
@@ -242,25 +253,27 @@ export default function People() {
                             Orange County
                         </h1>
                     </div>
-                    <div className="grid">
+                    <div className={styles.grid}>
                         <div>
-                            <p className="item-size">Health Department</p>
-                            <p className="item-size">
+                            <p className={styles.itemSize}>Health Department</p>
+                            <p className={styles.itemSize}>
                                 Criminal Justic Resource Department
                             </p>
                         </div>
 
                         <div>
-                            <p className="item-size">Emergency Services</p>
+                            <p className={styles.itemSize}>
+                                Emergency Services
+                            </p>
                         </div>
 
                         <div>
-                            <p className="item-size">Sheriff's Office</p>
+                            <p className={styles.itemSize}>Sheriff's Office</p>
                         </div>
                     </div>
                 </div>
-                <div className="coalition-partners-containers">
-                    <div className="partners-headers">
+                <div className={styles.coalitionPartnersContainers}>
+                    <div className={styles.partnersHeaders}>
                         <img
                             src={AdditionalPartnersLogo}
                             style={{ marginRight: "10px" }}
@@ -269,44 +282,46 @@ export default function People() {
                             Additonal Partners
                         </h1>
                     </div>
-                    <div className="grid">
+                    <div className={styles.grid}>
                         <div>
-                            <p className="item-size">
+                            <p className={styles.itemSize}>
                                 Carolina Student Legal Services
                             </p>
-                            <p className="item-size">
+                            <p className={styles.itemSize}>
                                 Orange County ABC Stores & Board
                             </p>
-                            <p className="item-size">
+                            <p className={styles.itemSize}>
                                 Chapel Hill-Carrboro City Schools
                             </p>
                         </div>
 
                         <div>
-                            <p className="item-size">
+                            <p className={styles.itemSize}>
                                 Marian Cheek Jackson Center for Making and
                                 Saving History
                             </p>
-                            <p className="item-size">
+                            <p className={styles.itemSize}>
                                 Chapel Hill Downtown Partnership
                             </p>
-                            <p className="item-size">
+                            <p className={styles.itemSize}>
                                 Chapel Hill-Carrboro City Schools PTA Council
                             </p>
                         </div>
 
                         <div>
-                            <p className="item-size">Orange Partnership</p>
-                            <p className="item-size">
+                            <p className={styles.itemSize}>
+                                Orange Partnership
+                            </p>
+                            <p className={styles.itemSize}>
                                 Town of Carrboro Police Department
                             </p>
-                            <p className="item-size">Local Businesses</p>
+                            <p className={styles.itemSize}>Local Businesses</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div className="former-contributors">
+            <div className={styles.formerContributors}>
                 <p
                     style={{
                         fontFamily: "Figtree",
@@ -332,9 +347,9 @@ export default function People() {
                     }}
                 >
                     Thank you to past partners and supporters of the CCC! We
-                    couldn’t have gotten here without you.
+                    couldn't have gotten here without you.
                 </p>
-                <div className="former-staff-box">
+                <div className={styles.formerStaffBox}>
                     <p
                         style={{
                             fontFamily: "Figtree",
@@ -348,7 +363,7 @@ export default function People() {
                     >
                         Previous Staff and Leadership
                     </p>
-                    <ul className="former-staff-list">
+                    <ul className={styles.formerStaffList}>
                         <li>Former Chapel Hill Major Kleinschmidt, J.D.</li>
                         <li>
                             Former Orange County Health Director Collen Bridger,
