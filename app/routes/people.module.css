@@ -15,7 +15,6 @@
     height: 196px;
     background-color: gray;
     border-radius: 50%;
-    margin-right: 50px;
     min-width: 196px;
     min-height: 196px;
     object-fit: cover;
@@ -26,12 +25,15 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    max-width: 100%;
+    flex-wrap: wrap;
 }
 
 .directorInfoText {
     margin-left: 20px;
-    width: 641px;
-    min-width: 641px;
+    width: 90%;
+    min-width: 0;
+    max-width: 641px;
     height: auto;
 }
 
@@ -72,9 +74,15 @@
     margin-bottom: 30px;
 }
 
+.itemSize,
+.studentAffairsList li {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
 .boardOfDirectorsContainer {
     background-color: #e6e6e6;
-    width: 1093px;
+    width: 100%;
     padding: 32px;
     border-radius: 16px;
     margin-top: 48px;
@@ -96,6 +104,7 @@
 
 .formerContributors {
     width: 1093px;
+    max-width: 100%;
     padding-top: 32px;
     padding-right: 48px;
     padding-bottom: 32px;

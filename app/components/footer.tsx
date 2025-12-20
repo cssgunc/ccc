@@ -1,16 +1,32 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import location from "../assets/icons/location.svg";
 import mail from "../assets/icons/mail.svg";
 
 export default function Footer() {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        setIsMobile(window.innerWidth < 870);
+        const handleResize = () => {
+            const newIsMobile = window.innerWidth < 870;
+            setIsMobile(newIsMobile);
+        };
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
     const footerStyle = {
         width: "100%",
         backgroundColor: "#05326C",
-        padding: "60px 80px",
+        padding: isMobile ? "32px 20px" : "60px 80px",
         display: "flex",
-        justifyContent: "space-between",
+        flexDirection: isMobile ? "column" : "row",
+        justifyContent: isMobile ? "center" : "space-between",
         alignItems: "center",
         boxSizing: "border-box",
+        flexWrap: "wrap",
+        gap: "32px",
     } as const;
 
     const leftSection = {
@@ -33,8 +49,9 @@ export default function Footer() {
     const rightSection = {
         display: "flex",
         flexDirection: "column",
-        alignItems: "flex-end",
+        alignItems: isMobile ? "center" : "flex-end",
         gap: "32px",
+        width: isMobile ? "100%" : "auto",
     } as const;
 
     const logoStyle = {
@@ -48,6 +65,8 @@ export default function Footer() {
         flexDirection: "row",
         gap: "20px",
         alignItems: "center",
+        flexWrap: "wrap",
+        justifyContent: "center",
     } as const;
 
     const circleStyle = {
@@ -69,8 +88,12 @@ export default function Footer() {
 
     const navStyle = {
         display: "flex",
-        gap: "40px",
+        flexDirection: isMobile ? "column" : "row",
+        flexWrap: isMobile ? "nowrap" : "wrap",
+        gap: isMobile ? "12px" : "40px",
         color: "white",
+        justifyContent: isMobile ? "center" : "flex-end",
+        alignItems: isMobile ? "center" : "flex-end",
         fontSize: "1rem",
         textTransform: "none",
     } as const;
@@ -182,7 +205,7 @@ export default function Footer() {
                         Who We Are
                     </Link>
                     <Link to="/research" style={linkStyle}>
-                        Research
+                        Resources
                     </Link>
                     <Link to="/data" style={linkStyle}>
                         Data

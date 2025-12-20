@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "~/components/header";
+import Footer from "~/components/footer";
 import ArchivedNewsletterCard from "~/components/archivedNewsletterCard";
 import leftImage from "~/assets/newsletter-left.jpg";
 import rightImage from "~/assets/newsletter-right.png";
@@ -144,7 +145,7 @@ export default function Newsletter() {
                     </div>
 
                     <div className="mt-12 grid gap-12 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.4fr)_minmax(0,0.8fr)] lg:items-center">
-                        <div className="flex justify-center lg:h-full lg:items-center">
+                        <div className="hidden md:flex justify-center lg:h-full lg:items-center">
                             <div
                                 className="w-full max-w-md overflow-hidden rounded-2xl border border-[#e4e4e4]"
                                 style={{ aspectRatio: "1 / 1" }}
@@ -256,7 +257,7 @@ export default function Newsletter() {
                             </button>
                         </form>
 
-                        <div className="flex justify-end lg:h-full lg:items-center">
+                        <div className="hidden md:flex justify-center lg:h-full lg:items-center">
                             <div
                                 className="w-full max-w-md overflow-hidden rounded-2xl border border-[#e4e4e4]"
                                 style={{ aspectRatio: "1 / 1" }}
@@ -287,6 +288,7 @@ export default function Newsletter() {
                     </section>
                 </div>
             </section>
+            <Footer />
         </main>
     );
 }
