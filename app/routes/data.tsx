@@ -2,6 +2,7 @@
 
 import React from "react";
 import Header from "~/components/header";
+import Footer from "~/components/footer";
 import {
     Area,
     CartesianGrid,
@@ -345,16 +346,13 @@ export default function Data() {
                     <div className="flex justify-center">
                         <Button
                             asChild
-                            className="w-1/3 rounded-full py-7 text-white text-xl font-medium inline-flex items-center justify-center"
-                            style={{
-                                backgroundColor: "#499ED7",
-                                borderColor: "#499ED7",
-                            }}
+                            className="mx-auto w-[90vw] max-w-[300px] sm:max-w-[380px] h-[56px] px-12 rounded-[64px] bg-[#499ED7] hover:bg-blue-700 text-white text-xl font-medium inline-flex items-center justify-center transition"
                         >
                             <a
                                 href="https://embed.clearimpact.com/Scorecard/Embed/82237"
                                 target="_blank"
                                 rel="noreferrer"
+                                className="inline-flex items-center justify-center"
                             >
                                 <span>Scorecard</span>
                                 <svg
@@ -402,6 +400,7 @@ export default function Data() {
                     </div>
                 </section>
             </section>
+            <Footer />
         </main>
     );
 }
