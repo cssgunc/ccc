@@ -12,8 +12,8 @@ import samanthaPfp from "../assets/samantha.png";
 export default function People() {
     return (
         <div className="min-h-screen flex flex-col">
-            <Header />
             <main className="flex-1 pb-16">
+                <Header />
                 <header
                     className="mt-20 mb-8 text-center"
                     style={{ backgroundColor: "#96d47c", padding: "2rem 0" }}

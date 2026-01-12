@@ -43,6 +43,13 @@
     gap: 40px;
 }
 
+@media (max-width: 870px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+}
+
 .coalitionPartnersContainers {
     max-width: 1093px;
     padding: 20px;
@@ -78,6 +85,7 @@
 .studentAffairsList li {
     overflow-wrap: anywhere;
     word-break: break-word;
+    margin-bottom: 30px;
 }
 
 .boardOfDirectorsContainer {
