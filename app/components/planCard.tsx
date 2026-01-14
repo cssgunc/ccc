@@ -1,5 +1,5 @@
-import React from "react";
 import StrategicPlan from "app/assets/icons/strategic-plan.svg";
+import planPdf from "app/assets/CCC-Strategic-Plan-2024-27-1.pdf";
 
 interface PlanCardProps {
     title?: string;
@@ -9,6 +9,10 @@ interface PlanCardProps {
 }
 
 const BLUE_COLOR = "text-[#499ED7]";
+
+const openPDF = (url: string) => {
+    window.open(url, "_blank");
+};
 
 export default function PlanCard({
     title = "Placeholder Plan Title",
@@ -26,6 +30,14 @@ export default function PlanCard({
             </h2>
 
             <p className="text-[20px] font-medium leading-11">{summary}</p>
+            <button
+                onClick={() => {
+                    openPDF(planPdf);
+                }}
+                className="font-bold bg-[#499dd6] text-white mt-5 px-6 py-3 rounded-full hover:bg-blue-700 transition w-40"
+            >
+                View Plan{" "}
+            </button>
         </div>
     );
 }

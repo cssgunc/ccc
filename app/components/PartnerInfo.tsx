@@ -1,5 +1,4 @@
 import styles from "./PartnerInfo.module.css";
-import React from "react";
 
 export default function PartnerInfo({
     title,

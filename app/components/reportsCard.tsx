@@ -1,5 +1,3 @@
-import React from "react";
-
 interface ReportCardProps {
     title?: string;
     summary?: string;
