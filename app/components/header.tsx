@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import logo from "app/assets/logo.png";
 import { Link } from "react-router-dom";
+import logo2 from "app/assets/logo2.png";
 
 const BREAKPOINT = 870;
 
@@ -40,14 +40,13 @@ function Header() {
         position: "sticky",
         top: shrink ? "0px" : "40px",
         margin: "0 auto",
-        marginTop: "40px",
-        marginBottom: "10px",
+        marginBottom: "40px",
         marginLeft: shrink ? "0px" : "40px",
         marginRight: shrink ? "0px" : "40px",
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        backgroundColor: "lightgray",
+        backgroundColor: "white",
         borderRadius: shrink ? "0px" : "100px",
         padding: shrink ? "5px 20px" : "0px 20px",
         fontSize: shrink ? "18px" : "20px",
@@ -55,6 +54,7 @@ function Header() {
         gap: "125px",
         zIndex: 1000,
         transition: "all 0.4s ease",
+        boxShadow: "5px 5px 10px rgba(0, 0, 0, 0.2)",
     } as const;
 
     const linkContainerStyle = {
@@ -141,7 +141,7 @@ function Header() {
                 >
                     <Link to="/">
                         <img
-                            src={logo}
+                            src={logo2}
                             alt="Logo"
                             style={{
                                 height: isMobile ? "90px" : "90px",
@@ -166,7 +166,7 @@ function Header() {
                         Who We Are
                     </Link>
                     <Link to="/research" style={textStyle}>
-                        Research
+                        Resources
                     </Link>
                     <Link to="/data" style={textStyle}>
                         Data
@@ -205,7 +205,7 @@ function Header() {
                     Who We Are
                 </Link>
                 <Link to="/research" style={menuLinkStyle} onClick={toggleMenu}>
-                    Research
+                    Resources
                 </Link>
                 <Link to="/data" style={menuLinkStyle} onClick={toggleMenu}>
                     Data

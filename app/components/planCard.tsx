@@ -1,4 +1,5 @@
 import React from "react";
+import StrategicPlan from "app/assets/icons/strategic-plan.svg";
 
 interface PlanCardProps {
     title?: string;
@@ -8,31 +9,23 @@ interface PlanCardProps {
 }
 
 const BLUE_COLOR = "text-[#499ED7]";
-const BORDER_COLOR = "border-[#499ED7]";
 
 export default function PlanCard({
     title = "Placeholder Plan Title",
     summary = "Placeholder description for the plan card component.",
 }: PlanCardProps) {
     return (
-        <div
-            className={
-                "mx-auto px-16 py-10 rounded-3xl bg-white border-4 " +
-                BORDER_COLOR
-            }
-        >
-            <div className="flex flex-col items-center">
-                <h2 className={"text-4xl font-bold pb-3.5 " + BLUE_COLOR}>
-                    {title}
-                </h2>
-                <p
-                    className={
-                        "text-2xl font-medium leading-9 max-w-5xl " + BLUE_COLOR
-                    }
-                >
-                    {summary}
-                </p>
-            </div>
+        <div className="mx-auto max-w-6xl rounded-4xl pt-10 pb-10 px-10">
+            <h2 className={`text-5xl font-bold mb-6 ${BLUE_COLOR} flex`}>
+                {title}
+                <img
+                    src={StrategicPlan}
+                    alt="Strategic Plan Icon"
+                    className="w-15 h-15 ml-5 -translate-y-2.5"
+                />
+            </h2>
+
+            <p className="text-[20px] font-medium leading-11">{summary}</p>
         </div>
     );
 }

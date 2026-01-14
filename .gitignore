@@ -5,4 +5,5 @@
 /.react-router/
 /build/
 
+# Environment variables like the CI API key and site code
 .env
