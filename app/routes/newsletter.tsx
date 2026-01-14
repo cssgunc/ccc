@@ -21,33 +21,41 @@ const SIGN_UP_BUTTON_COLORS = {
     hover: "#499ED7",
 } as const;
 
-const archivedNewsletters = [
-    {
-        title: "Fall Newsletter",
-        date: "9/24/25",
-        href: "https://us18.campaign-archive.com/?u=f8b446b5dbe8e2b40d152d757&id=8769a11d67",
-    },
-    {
-        title: "Sept QM Recap",
-        date: "9/23/24",
-        href: "https://us18.campaign-archive.com/?u=f8b446b5dbe8e2b40d152d757&id=702d6143ad",
-    },
-    {
-        title: "Announcement & Survey",
-        date: "7/1/24",
-        href: "https://us18.campaign-archive.com/?u=f8b446b5dbe8e2b40d152d757&id=c9052854da",
-    },
-    {
-        title: "Quarterly: April 2024",
-        date: "4/25/24",
-        href: "https://us18.campaign-archive.com/?u=f8b446b5dbe8e2b40d152d757&id=ce8077e4f5",
-    },
-    {
-        title: "Spring Newsletter 1",
-        date: "3/25/24",
-        href: "https://us18.campaign-archive.com/?u=f8b446b5dbe8e2b40d152d757&id=00dc3fd63b",
-    },
-] as const;
+// const archivedNewsletters = [
+//     {
+//         title: "Fall Newsletter",
+//         date: "9/24/25",
+//         href: "https://us18.campaign-archive.com/?u=f8b446b5dbe8e2b40d152d757&id=8769a11d67",
+//     },
+//     {
+//         title: "Sept QM Recap",
+//         date: "9/23/24",
+//         href: "https://us18.campaign-archive.com/?u=f8b446b5dbe8e2b40d152d757&id=702d6143ad",
+//     },
+//     {
+//         title: "Announcement & Survey",
+//         date: "7/1/24",
+//         href: "https://us18.campaign-archive.com/?u=f8b446b5dbe8e2b40d152d757&id=c9052854da",
+//     },
+//     {
+//         title: "Quarterly: April 2024",
+//         date: "4/25/24",
+//         href: "https://us18.campaign-archive.com/?u=f8b446b5dbe8e2b40d152d757&id=ce8077e4f5",
+//     },
+//     {
+//         title: "Spring Newsletter 1",
+//         date: "3/25/24",
+//         href: "https://us18.campaign-archive.com/?u=f8b446b5dbe8e2b40d152d757&id=00dc3fd63b",
+//     },
+// ] as const;
+
+//defining the structure of each newsletter object
+type Newsletter = {
+    id: string;
+    title: string;
+    date: string;
+    href: string;
+};
 
 export default function Newsletter() {
     const [formValues, setFormValues] =
@@ -55,6 +63,54 @@ export default function Newsletter() {
     const [message, setMessage] = React.useState<string | null>(null);
     const [isSubmitted, setIsSubmitted] = React.useState(false);
     const [hasInteracted, setHasInteracted] = React.useState(false);
+
+    //state for archived newsletters:
+    //array that stores the archived newsletters
+    const [newsletters, setNewsletters] = React.useState<Newsletter[]>([]);
+
+    //state to track if the newsletters are being loaded
+    const [isLoadingNewsletters, setIsLoadingNewsletters] =
+        React.useState(true);
+
+    //error state
+    const [newsletterError, setNewsletterError] = React.useState<string | null>(
+        null
+    );
+
+    //useEffect fetch and render newsletters on page load
+    React.useEffect(() => {
+        //async function to fetch newsletters
+        const fetchNewsletters = async () => {
+            try {
+                //making the get request defined in server.js
+                const response = await fetch("/api/newsletters");
+
+                //parsing the response
+                const data = await response.json();
+
+                //checking if request was successful
+                if (data.success) {
+                    //updating newsletters state
+                    setNewsletters(data.data);
+
+                    //clears past errors
+                    setNewsletterError(null);
+                } else {
+                    setNewsletterError("Failed to load newsletters");
+                }
+            } catch (error) {
+                console.error("Error fetching newsletters:", error);
+
+                setNewsletterError(
+                    "Unable to load newsletters. Please try again later."
+                );
+            } finally {
+                setIsLoadingNewsletters(false);
+            }
+        };
+
+        fetchNewsletters();
+    }, []); //dependency array ensure this only rerenders on page load
 
     const fieldsComplete = areRequiredFilled(formValues);
     const emailValid = isEmailValid(formValues.email);
@@ -275,16 +331,31 @@ export default function Newsletter() {
                         <h2 className="text-left text-[32px] font-medium text-black">
                             Archived Newsletters
                         </h2>
-                        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                            {archivedNewsletters.map((item) => (
-                                <ArchivedNewsletterCard
-                                    key={item.title}
-                                    title={item.title}
-                                    date={item.date}
-                                    href={item.href || undefined}
-                                />
-                            ))}
-                        </div>
+
+                        {isLoadingNewsletters ? (
+                            <div className="mt-10 text-center text-lg text-gray-600">
+                                Loading newsletters...
+                            </div>
+                        ) : newsletterError ? (
+                            <div className="mt-10 text-center text-lg text-red-600">
+                                {newsletterError}
+                            </div>
+                        ) : newsletters.length > 0 ? (
+                            <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                                {newsletters.map((newsletter) => (
+                                    <ArchivedNewsletterCard
+                                        key={newsletter.id}
+                                        title={newsletter.title}
+                                        date={newsletter.date}
+                                        href={newsletter.href}
+                                    />
+                                ))}
+                            </div>
+                        ) : (
+                            <div className="mt-10 text-center text-lg text-gray-600">
+                                No newsletters available at this time.
+                            </div>
+                        )}
                     </section>
                 </div>
             </section>
