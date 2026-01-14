@@ -151,7 +151,7 @@ export default function Newsletter() {
     };
 
     return (
-        <main>
+        <main className="bg-white">
             <Header />
             <header
                 className="mt-20 mb-8 text-center"
