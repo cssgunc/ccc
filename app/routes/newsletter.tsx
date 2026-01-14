@@ -21,34 +21,6 @@ const SIGN_UP_BUTTON_COLORS = {
     hover: "#499ED7",
 } as const;
 
-// const archivedNewsletters = [
-//     {
-//         title: "Fall Newsletter",
-//         date: "9/24/25",
-//         href: "https://us18.campaign-archive.com/?u=f8b446b5dbe8e2b40d152d757&id=8769a11d67",
-//     },
-//     {
-//         title: "Sept QM Recap",
-//         date: "9/23/24",
-//         href: "https://us18.campaign-archive.com/?u=f8b446b5dbe8e2b40d152d757&id=702d6143ad",
-//     },
-//     {
-//         title: "Announcement & Survey",
-//         date: "7/1/24",
-//         href: "https://us18.campaign-archive.com/?u=f8b446b5dbe8e2b40d152d757&id=c9052854da",
-//     },
-//     {
-//         title: "Quarterly: April 2024",
-//         date: "4/25/24",
-//         href: "https://us18.campaign-archive.com/?u=f8b446b5dbe8e2b40d152d757&id=ce8077e4f5",
-//     },
-//     {
-//         title: "Spring Newsletter 1",
-//         date: "3/25/24",
-//         href: "https://us18.campaign-archive.com/?u=f8b446b5dbe8e2b40d152d757&id=00dc3fd63b",
-//     },
-// ] as const;
-
 //defining the structure of each newsletter object
 type Newsletter = {
     id: string;

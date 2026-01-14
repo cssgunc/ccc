@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "~/components/header";
 import Footer from "~/components/footer";
 import landingImage from "~/assets/landing.png";
@@ -9,14 +8,7 @@ import values from "~/assets/icons/our-values.svg";
 import { useRef } from "react";
 
 export function meta() {
-    return [
-        { title: "Vite + React Starter Template" },
-        {
-            name: "description",
-            content:
-                "A modern React starter template built with Vite, featuring TypeScript, ESLint, Prettier, and more.",
-        },
-    ];
+    return [{ title: "Campus and Community Coalition" }];
 }
 
 export default function Home() {

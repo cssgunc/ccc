@@ -1,4 +1,3 @@
-import React from "react";
 import StrategicPlan from "app/assets/icons/strategic-plan.svg";
 import planPdf from "app/assets/CCC-Strategic-Plan-2024-27-1.pdf";
 

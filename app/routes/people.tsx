@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./people.module.css";
 import PartnerInfo from "../components/PartnerInfo";
 import Header from "../components/header";
