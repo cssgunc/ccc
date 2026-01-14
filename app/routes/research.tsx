@@ -53,7 +53,7 @@ export default function Research() {
                     }}
                 />
 
-                <div className="mx-auto max-w-6xl mt-16">
+                <div className="mx-auto max-w-6xl mt-5">
                     <div className="mb-8 flex items-center">
                         <h2 className="text-5xl font-bold text-[#6A9F26] flex items-center">
                             Reports
