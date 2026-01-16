@@ -107,10 +107,6 @@ app.post("/api/add-contact", async (req, res) => {
 app.use(express.static(path.join(__dirname, "build")));
 app.use(express.json());
 
-app.get("/", (req, res) => {
-    res.json({ message: "Hello from the server!", status: "success" });
-});
-
 if (process.env.NODE_ENV !== "production") {
     app.listen(port, () => {
         console.log(`Server is listening at http://localhost:${port}`);
