@@ -160,7 +160,7 @@ export function Chart({
                 </div>
                 <Select value={timeRange} onValueChange={setTimeRange}>
                     <SelectTrigger
-                        className="hidden w-[40] rounded-lg sm:ml-auto sm:flex border-gray-400"
+                        className="hidden w-40 rounded-lg sm:ml-auto sm:flex border-gray-400"
                         aria-label="Select a value"
                     >
                         <SelectValue
