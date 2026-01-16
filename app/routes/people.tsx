@@ -8,6 +8,10 @@ import OrangeCountyLogo from "../assets/icons/orange-county.svg";
 import AdditionalPartnersLogo from "../assets/icons/additional-partners.svg";
 import samanthaPfp from "../assets/samantha.png";
 
+export function meta() {
+    return [{ title: "Campus and Community Coalition" }];
+}
+
 export default function People() {
     return (
         <div className="min-h-screen flex flex-col">

@@ -10,6 +10,10 @@ import report2 from "app/assets/Community-level-consequences-of-high-risk-drinki
 import report3 from "app/assets/CCC-UNC-SWCCC-CoD-Final-Report.Report.3.pdf";
 import report4 from "app/assets/CCC-The-Burden-of-Excessive-Drinking-in-Orange-County-NC-Final-Report.Report.4.pdf";
 
+export function meta() {
+    return [{ title: "Campus and Community Coalition" }];
+}
+
 export default function Research() {
     const openPDF = (url: string) => {
         window.open(url, "_blank");

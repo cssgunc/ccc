@@ -29,6 +29,10 @@ type Newsletter = {
     href: string;
 };
 
+export function meta() {
+    return [{ title: "Campus and Community Coalition" }];
+}
+
 export default function Newsletter() {
     const [formValues, setFormValues] =
         React.useState<typeof INITIAL_FORM>(INITIAL_FORM);

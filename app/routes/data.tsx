@@ -324,6 +324,10 @@ export function Chart({
     );
 }
 
+export function meta() {
+    return [{ title: "Campus and Community Coalition" }];
+}
+
 export default function Data() {
     return (
         <main>
