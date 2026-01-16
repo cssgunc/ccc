@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import location from "../assets/icons/location.svg";
 import mail from "../assets/icons/mail.svg";
+import logo from "app/assets/logo.png";
+import instagram from "app/assets/instagram-logo.png";
+import facebook from "app/assets/facebook-logo.png";
 
 export default function Footer() {
     const [isMobile, setIsMobile] = useState(false);
@@ -162,11 +165,7 @@ export default function Footer() {
                     }}
                 >
                     <Link to="/">
-                        <img
-                            src="app/assets/logo.png"
-                            alt="Logo"
-                            style={logoStyle}
-                        />
+                        <img src={logo} alt="Logo" style={logoStyle} />
                     </Link>
 
                     <div style={iconRowStyle}>
@@ -177,7 +176,7 @@ export default function Footer() {
                                 rel="noopener noreferrer"
                             >
                                 <img
-                                    src="app/assets/instagram-logo.png"
+                                    src={instagram}
                                     alt="Instagram"
                                     style={iconStyle}
                                 />
@@ -191,7 +190,7 @@ export default function Footer() {
                                 rel="noopener noreferrer"
                             >
                                 <img
-                                    src="app/assets/facebook-logo.png"
+                                    src={facebook}
                                     alt="Facebook"
                                     style={iconStyle}
                                 />

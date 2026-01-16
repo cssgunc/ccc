@@ -133,10 +133,10 @@ export default function Home() {
                                     with high-risk drinking.
                                 </p>
                                 <p className="text-right mt-6 text-lg">
-                                    We envision a community–University, Downtown
-                                    district, and neighborhoods–that can thrive
-                                    socially and economically while promoting
-                                    health and wellbeing for all.
+                                    We envision a community – University,
+                                    Downtown district, and neighborhoods – that
+                                    can thrive socially and economically while
+                                    promoting health and wellbeing for all.
                                 </p>
                             </div>
                         </div>
