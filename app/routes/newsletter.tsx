@@ -56,6 +56,7 @@ export default function Newsletter() {
             try {
                 //making the get request defined in server.js
                 const response = await fetch("/api/newsletters");
+                console.log(response);
 
                 //parsing the response
                 const data = await response.json();
