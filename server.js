@@ -111,9 +111,11 @@ app.get("/", (req, res) => {
     res.json({ message: "Hello from the server!", status: "success" });
 });
 
-app.listen(port, () => {
-    console.log(`Server is listening at http://localhost:${port}`);
-});
+if (process.env.NODE_ENV !== "production") {
+    app.listen(port, () => {
+        console.log(`Server is listening at http://localhost:${port}`);
+    });
+}
 
 //get request for clear impact data for data page
 app.get("/api/ci/:which", async (req, res) => {
@@ -152,3 +154,4 @@ app.get("/api/ci/:which", async (req, res) => {
         res.status(500).json({ error: "proxy error" });
     }
 });
+export default app;
