@@ -1,0 +1,6 @@
+{
+    "buildCommand": "npm run build",
+    "outputDirectory": "build/client",
+    "framework": null,
+    "rewrites": [{ "source": "/((?!api/).*)", "destination": "/index.html" }]
+}
