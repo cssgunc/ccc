@@ -11,7 +11,7 @@ import report3 from "app/assets/CCC-UNC-SWCCC-CoD-Final-Report.Report.3.pdf";
 import report4 from "app/assets/CCC-The-Burden-of-Excessive-Drinking-in-Orange-County-NC-Final-Report.Report.4.pdf";
 
 export function meta() {
-    return [{ title: "Campus and Community Coalition" }];
+    return [{ title: "CCC | Resources" }];
 }
 
 export default function Research() {
@@ -40,69 +40,70 @@ export default function Research() {
                         know about it! <br /> Let us know by e-mailing{" "}
                         <a
                             href="mailto:ccc@downtownchapelhill.com"
-                            className="text-blue-300  hover:text-blue-500 font-medium underline"
+                            className="text-[#499ED7]  hover:text-blue-500 font-medium underline"
                         >
                             ccc@downtownchapelhill.com
                         </a>
                         .
                     </p>
                 </div>
-                <PlanCard
-                    title="Strategic Plan"
-                    summary="Using a facilitated process, key partners determined the next strategies of the CCC based on available data and trends, what works locally, and what is within the capacity of the CCC. Adopted strategies prioritize the ability to influence the environment and promote population-level health while applying a harm reduction lens. Strategies are derived largely from the alcohol-related evidence base, with the intention that strategies may be modified and applied to other substance use behaviors as those issues arise and as that evidence base evolves."
-                    buttonText="View Plan"
-                    onClick={() => {
-                        openPDF(planPdf);
-                    }}
-                />
-
-                <div className="mx-auto max-w-6xl mt-5">
-                    <div className="mb-8 flex items-center">
-                        <h2 className="text-5xl font-bold text-[#6A9F26] flex items-center">
-                            Reports
-                            <img
-                                src={ReportIcon}
-                                alt="Reports Icon"
-                                className="w-15 h-15 ml-5"
-                            />
-                        </h2>
-                    </div>
-                    <section className="mt-8">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 auto-rows-[1fr]">
-                            <ReportCard
-                                title="Findings & Recommendations of the Town/Gown Collaborative"
-                                summary="Using lessons learned from the SPARC Study (Wake Forest University), the latest available research, and a comprehensive community engagement process, these findings and recommendations created the foundations of the Chapel Hill Campus & Community Coalition in 2014."
-                                buttonText="View Report"
-                                onClick={() => {
-                                    openPDF(report1);
-                                }}
-                            />
-                            <ReportCard
-                                title="The Burden of Excessive Drinking in Orange County, NC"
-                                summary="Excessive drinking in Orange County, NC, cost $111.8 million in 2017 due to healthcare expenses, productivity losses, and alcohol-related emergencies, contributing to 15.9% of deaths, with significant impacts on younger populations from violence-related fatalities."
-                                buttonText="View Report"
-                                onClick={() => {
-                                    openPDF(report4);
-                                }}
-                            />
-                            <ReportCard
-                                title="Community-Related Consequences of High-Risk Drinking: Chapel Hill, NC"
-                                summary="Residents of Chapel Hill’s historic Northside and Cameron-McCauley neighborhoods report negative impacts from UNC-CH student drinking, including vandalism and noise, with Northside residents highlighting racial disparities in how disruptive behavior is addressed compared to generally positive perceptions in Cameron-McCauley."
-                                buttonText="View Report"
-                                onClick={() => {
-                                    openPDF(report2);
-                                }}
-                            />
-                            <ReportCard
-                                title="UNC-CH Color of Drinking Project"
-                                summary="The Color of Drinking survey at UNC-Chapel Hill revealed that students, particularly LGBTQ+ individuals and students of color, face disproportionate mental health and safety harms from the campus alcohol culture despite drinking less than their white, non-LGBTQ+ peers."
-                                buttonText="View Report"
-                                onClick={() => {
-                                    openPDF(report3);
-                                }}
-                            />
+                <div className="w-full">
+                    <PlanCard
+                        title="Strategic Plan"
+                        summary="Using a facilitated process, key partners determined the next strategies of the CCC based on available data and trends, what works locally, and what is within the capacity of the CCC. Adopted strategies prioritize the ability to influence the environment and promote population-level health while applying a harm reduction lens. Strategies are derived largely from the alcohol-related evidence base, with the intention that strategies may be modified and applied to other substance use behaviors as those issues arise and as that evidence base evolves."
+                        buttonText="View Plan"
+                        onClick={() => {
+                            openPDF(planPdf);
+                        }}
+                    />
+                    <div className="mx-auto max-w-6xl mt-5">
+                        <div className="mb-8 flex items-center">
+                            <h2 className="text-5xl font-bold text-[#6A9F26] flex items-center">
+                                Reports
+                                <img
+                                    src={ReportIcon}
+                                    alt="Reports Icon"
+                                    className="w-15 h-15 ml-5"
+                                />
+                            </h2>
                         </div>
-                    </section>
+                        <section className="mt-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 auto-rows-[1fr]">
+                                <ReportCard
+                                    title="Findings & Recommendations of the Town/Gown Collaborative"
+                                    summary="Using lessons learned from the SPARC Study (Wake Forest University), the latest available research, and a comprehensive community engagement process, these findings and recommendations created the foundations of the Chapel Hill Campus & Community Coalition in 2014."
+                                    buttonText="View Report"
+                                    onClick={() => {
+                                        openPDF(report1);
+                                    }}
+                                />
+                                <ReportCard
+                                    title="The Burden of Excessive Drinking in Orange County, NC"
+                                    summary="Excessive drinking in Orange County, NC, cost $111.8 million in 2017 due to healthcare expenses, productivity losses, and alcohol-related emergencies, contributing to 15.9% of deaths, with significant impacts on younger populations from violence-related fatalities."
+                                    buttonText="View Report"
+                                    onClick={() => {
+                                        openPDF(report4);
+                                    }}
+                                />
+                                <ReportCard
+                                    title="Community-Related Consequences of High-Risk Drinking: Chapel Hill, NC"
+                                    summary="Residents of Chapel Hill’s historic Northside and Cameron-McCauley neighborhoods report negative impacts from UNC-CH student drinking, including vandalism and noise, with Northside residents highlighting racial disparities in how disruptive behavior is addressed compared to generally positive perceptions in Cameron-McCauley."
+                                    buttonText="View Report"
+                                    onClick={() => {
+                                        openPDF(report2);
+                                    }}
+                                />
+                                <ReportCard
+                                    title="UNC-CH Color of Drinking Project"
+                                    summary="The Color of Drinking survey at UNC-Chapel Hill revealed that students, particularly LGBTQ+ individuals and students of color, face disproportionate mental health and safety harms from the campus alcohol culture despite drinking less than their white, non-LGBTQ+ peers."
+                                    buttonText="View Report"
+                                    onClick={() => {
+                                        openPDF(report3);
+                                    }}
+                                />
+                            </div>
+                        </section>
+                    </div>
                 </div>
             </div>
             <Footer />

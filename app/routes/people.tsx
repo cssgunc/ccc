@@ -9,7 +9,7 @@ import AdditionalPartnersLogo from "../assets/icons/additional-partners.svg";
 import samanthaPfp from "../assets/samantha.png";
 
 export function meta() {
-    return [{ title: "Campus and Community Coalition" }];
+    return [{ title: "CCC | People" }];
 }
 
 export default function People() {
@@ -49,18 +49,12 @@ export default function People() {
                         >
                             Campus & Community Coalition Director
                         </p>
-                        <p
-                            style={{
-                                fontFamily: "Figtree",
-                                fontWeight: "300px",
-                                fontStyle: "Italic",
-                                fontSize: "20px",
-                                color: "#499ED7",
-                                marginBottom: "8px",
-                            }}
+                        <a
+                            href="mailto:samantha@downtownchapelhill.com"
+                            className="font-figtree italic text-[20px] text-[#499ED7] hover:text-blue-500 font-medium underline mb-2"
                         >
                             samantha@downtownchapelhill.com
-                        </p>
+                        </a>
                         <p
                             style={{
                                 fontFamily: "Figtree",
@@ -393,16 +387,16 @@ export default function People() {
                             Previous Staff and Leadership
                         </p>
                         <ul className={styles.formerStaffList}>
+                            <li>
+                                Former UNC-CH Chancellor Holden Thorp, Ph.D.
+                            </li>
                             <li>Former Chapel Hill Major Kleinschmidt, J.D.</li>
                             <li>
                                 Former Orange County Health Director Collen
                                 Bridger, Ph.D, M.P.H.
                             </li>
-                            <li>Elinor Landess, M.A.</li>
-                            <li>
-                                Former UNC-CH Chancellor Holden Thorp, Ph.D.
-                            </li>
                             <li>Barb Alvarez Martin, Ph.D., M.P.H.</li>
+                            <li>Elinor Landess, M.A.</li>
                         </ul>
                     </div>
                     <p
@@ -432,6 +426,29 @@ export default function People() {
                         Thank you to all former interns and graduate capstone
                         teams who have dedicated numerous hours and skills to
                         further the CCC's work and promote a healthy community!
+                    </p>
+                    <p
+                        style={{
+                            fontFamily: "Figtree",
+                            fontWeight: "600px",
+                            fontStyle: "SemiBold",
+                            fontSize: "20px",
+                            lineHeight: "100%",
+                            marginTop: "64px",
+                            marginBottom: "32px",
+                            textAlign: "center",
+                        }}
+                    >
+                        An additional thank you to
+                        <a
+                            href="https://www.cssgunc.org/"
+                            target="_blank"
+                            className="text-[#499ED7]  hover:text-blue-500 font-medium underline"
+                        >
+                            {" "}
+                            UNC CS+Social Good{" "}
+                        </a>
+                        for building this website in support of our mission.
                     </p>
                 </div>
                 <p

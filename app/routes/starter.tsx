@@ -52,11 +52,11 @@ export default function Home() {
                         <div className="flex-1 px-6 py-10 flex flex-col items-center text-center">
                             <div className="min-h-[72px] flex items-center justify-center">
                                 <p className="text-6xl font-bold leading-none">
-                                    22.4%
+                                    1 in 5
                                 </p>
                             </div>
                             <p className="text-lg max-w-[40ch]">
-                                of university students participating in the 2025
+                                of UNC-CH students participating in the 2025
                                 NCHA survey drank five or more drinks at a
                                 sitting at least once in the past 2 weeks.
                             </p>
@@ -72,14 +72,15 @@ export default function Home() {
                                 individuals under the age of 29 were
                                 treated/transported by Orange County EMS for
                                 substance-related injuries on or near UNC-CH
-                                during the 2024-2025 fiscal year.
+                                during the 2024-2025 fiscal year. That's nearly
+                                1 person every day!
                             </p>
                         </div>
                         <div className="hidden md:block w-px h-24 bg-white self-center" />
                         <div className="flex-1 basis-0 py-10 px-6 text-center flex flex-col items-center">
                             <div className="min-h-[72px] flex items-center justify-center">
                                 <p className="text-6xl font-bold leading-none">
-                                    25.68%
+                                    1 in 4
                                 </p>
                             </div>
                             <p className="text-lg max-w-[40ch]">

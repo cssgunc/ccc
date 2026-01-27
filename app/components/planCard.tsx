@@ -19,8 +19,8 @@ export default function PlanCard({
     summary = "Placeholder description for the plan card component.",
 }: PlanCardProps) {
     return (
-        <div className="mx-auto max-w-6xl rounded-4xl pt-10 pb-10 px-10">
-            <h2 className={`text-5xl font-bold mb-6 ${BLUE_COLOR} flex`}>
+        <div className="mx-auto max-w-6xl rounded-4xl pt-5 pb-10">
+            <h2 className={`text-5xl font-bold mb-2 ${BLUE_COLOR} flex`}>
                 {title}
                 <img
                     src={StrategicPlan}

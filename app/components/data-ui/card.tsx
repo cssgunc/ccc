@@ -1,6 +1,7 @@
 import * as React from "react";
 
 import { cn } from "~/lib/utils";
+import { Link } from "lucide-react";
 
 function Card({ className, ...props }: React.ComponentProps<"div">) {
     return (
@@ -32,9 +33,18 @@ function CardTitle({ className, ...props }: React.ComponentProps<"div">) {
     return (
         <div
             data-slot="card-title"
-            className={cn("leading-none font-semibold", className)}
+            className={cn(
+                "flex items-center gap-2 leading-none font-semibold hover:text-[#499ED7]",
+                className
+            )}
             {...props}
-        />
+        >
+            <span className="min-w-0">{props.children}</span>
+            <Link
+                className="h-4 w-4 shrink-0 text-current"
+                aria-hidden="true"
+            />
+        </div>
     );
 }
 

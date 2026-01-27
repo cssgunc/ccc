@@ -325,7 +325,7 @@ export function Chart({
 }
 
 export function meta() {
-    return [{ title: "Campus and Community Coalition" }];
+    return [{ title: "CCC | Data" }];
 }
 
 export default function Data() {
@@ -381,7 +381,12 @@ export default function Data() {
 
                 <section className="flex flex-col gap-16">
                     <div>
-                        <Chart which="binge" embed />
+                        <a
+                            href="https://embed.clearimpact.com/Measure/Embed/100250717"
+                            target="_blank"
+                        >
+                            <Chart which="binge" embed />
+                        </a>
                         <div className="mt-4">
                             <p className="text-md">
                                 {chartConfigs.binge.blurb}
@@ -392,7 +397,12 @@ export default function Data() {
                         </div>
                     </div>
                     <div>
-                        <Chart which="party" embed />
+                        <a
+                            href="https://embed.clearimpact.com/Measure/Embed/100061976"
+                            target="_blank"
+                        >
+                            <Chart which="party" embed />
+                        </a>
                         <div className="mt-4">
                             <p className="text-md">
                                 {chartConfigs.party.blurb}

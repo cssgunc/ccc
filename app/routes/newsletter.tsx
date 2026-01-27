@@ -30,7 +30,7 @@ type Newsletter = {
 };
 
 export function meta() {
-    return [{ title: "Campus and Community Coalition" }];
+    return [{ title: "CCC | Newsletter" }];
 }
 
 export default function Newsletter() {
