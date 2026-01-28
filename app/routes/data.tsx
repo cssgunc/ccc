@@ -81,7 +81,9 @@ export function Chart({
     which?: "binge" | "party";
     embed?: boolean;
 }) {
-    const [timeRange, setTimeRange] = React.useState("all");
+    const [timeRange, setTimeRange] = React.useState<"all" | "2y" | "5y">(
+        "all"
+    );
     const [chartData, setChartData] = React.useState<
         { date: string; desktop: number | null; mobile: number | null }[]
     >([]);
@@ -160,8 +162,9 @@ export function Chart({
                 </div>
                 <Select
                     defaultValue="all"
-                    value={timeRange}
-                    onValueChange={setTimeRange}
+                    onValueChange={(v) =>
+                        setTimeRange(v as "all" | "2y" | "5y")
+                    }
                 >
                     <SelectTrigger
                         className="hidden w-[40] rounded-lg sm:ml-auto sm:flex border-gray-400"
