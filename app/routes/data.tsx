@@ -158,8 +158,15 @@ export function Chart({
                     </CardTitle>
                     <CardDescription>{activeConfig.subtitle}</CardDescription>
                 </div>
-                <Select value={timeRange} onValueChange={setTimeRange}>
-                    <SelectTrigger className="hidden w-[40] rounded-lg sm:ml-auto sm:flex border-gray-400">
+                <Select
+                    defaultValue="all"
+                    value={timeRange}
+                    onValueChange={setTimeRange}
+                >
+                    <SelectTrigger
+                        className="hidden w-[40] rounded-lg sm:ml-auto sm:flex border-gray-400"
+                        aria-label="Select a value"
+                    >
                         <SelectValue
                             placeholder="All years"
                             className="border-gray-400"
