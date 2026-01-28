@@ -81,9 +81,7 @@ export function Chart({
     which?: "binge" | "party";
     embed?: boolean;
 }) {
-    const [timeRange, setTimeRange] = React.useState<"all" | "2y" | "5y">(
-        "all"
-    );
+    const [timeRange, setTimeRange] = React.useState("all");
     const [chartData, setChartData] = React.useState<
         { date: string; desktop: number | null; mobile: number | null }[]
     >([]);
@@ -160,12 +158,7 @@ export function Chart({
                     </CardTitle>
                     <CardDescription>{activeConfig.subtitle}</CardDescription>
                 </div>
-                <Select
-                    defaultValue="all"
-                    onValueChange={(v) =>
-                        setTimeRange(v as "all" | "2y" | "5y")
-                    }
-                >
+                <Select value={timeRange} onValueChange={setTimeRange}>
                     <SelectTrigger
                         className="hidden w-[40] rounded-lg sm:ml-auto sm:flex border-gray-400"
                         aria-label="Select a value"
