@@ -19,4 +19,5 @@ This webpage uses React. [Click here to get started with React.](https://react.d
 ## Get Started
 
 Look at our environment setup docs: [Environment Setup](docs/environment_setup.md)\
-Also, make sure to look over the: [Contributing Guidelines](docs/contributing_guidelines.md)
+Also, make sure to look over the: [Contributing Guidelines](docs/contributing_guidelines.md)\
+If you are looking for more information about the project structure + more about the code for maintenance reasons, please see: [Maintenance](docs/maintenance.md)
