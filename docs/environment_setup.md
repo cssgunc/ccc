@@ -20,7 +20,8 @@ Before you begin, ensure you have the following installed:
 3. If you are not automatically prompted, open the VS Code Command Pallete (Mac: `Cmd+Shift+P`, Windows/Linux: `Ctrl+Shift+P`).
 4. Run the command **Dev Containers: Rebuild and Reopen in Container**.
 5. This will build the Docker container for the development environment. Note that the first build might take a few minutes. Subsequent loads will be much faster.
-6. Run `npm run dev` to start the development server.
+6. This project will require two terminals to run locally. Start up the backend server in one with `npm start`.
+7. Run `npm run dev` to start the development server in the other terminal. Click on the local host link provided here to view the project.
 
 ## Available Commands
 
