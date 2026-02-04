@@ -6,7 +6,7 @@ A CS + SG project in partnership with The Campus &amp; Community Coalition
 
 The Campus & Community Coalition (CCC) is a collaborative force bringing together university and community partners to address the harms associated with high-risk drinking. By fostering open dialogue, sharing power, and using data-driven strategies, they work to create an environment where everyone can thrive socially, academically, and economically.
 
-## Project Mission
+## Project Mission!
 
 CCC wants to migrate from under Downtown Chapel Hill's website to their own. [Click here to see the current website.](https://www.downtownchapelhill.com/coalition)
 
